@@ -1,0 +1,40 @@
+@import './variables';
+
+$fontPath: '../fonts';
+
+@font-face {
+  font-family: $main-font-family;
+  src: url('../fonts/InterVariable.ttf') format('truetype');
+  font-weight: 400 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $main-font-family;
+  src:
+    url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.otf') format('opentype'),
+    url('../fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $main-font-family;
+  src:
+    url('../fonts/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/Inter-Medium.otf') format('opentype'),
+    url('../fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $main-font-family;
+  src:
+    url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.otf') format('opentype'),
+    url('../fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
