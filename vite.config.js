@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { globalStylesOptions } from './global.styles';
 
 export default defineConfig({
   plugins: [react()],
@@ -13,6 +14,13 @@ export default defineConfig({
       helpers: '/src/helpers',
       context: '/src/context',
       services: '/src/services',
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: globalStylesOptions,
+      },
     },
   },
   base: '/my-camper',
