@@ -1,5 +1,5 @@
 const FavoritesPage = () => {
-  return <h1>Favorites Page</h1>;
+  return <h1>Catalog Page</h1>;
 };
 
 export default FavoritesPage;
