@@ -1,0 +1,16 @@
+.heroSection {
+  padding: 260px 805px 260px 64px;
+  background: $gray-color;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    image-set(
+      url('./images/hero-bg@1x.jpg') 1x,
+      url('./images/hero-bg@2x.jpg') 2x
+    );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroTitle {
+  margin-bottom: 40px;
+}

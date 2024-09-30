@@ -6,11 +6,11 @@ const SharedLayout = () => {
   return (
     <>
       <Header />
-      <div style={{ minHeight: '100vh' }}>
-        <Suspense>
-          <Outlet />
-        </Suspense>
-      </div>
+      {/* <div style={{ minHeight: '100vh' }}> */}
+      <Suspense>
+        <Outlet />
+      </Suspense>
+      {/* </div> */}
     </>
   );
 };

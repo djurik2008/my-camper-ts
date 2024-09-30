@@ -1,0 +1,12 @@
+.mainTitle {
+  @include font(48, 32);
+  font-weight: 600;
+  color: $inputs-color;
+  margin-bottom: 16px;
+}
+
+.description {
+  @include font(24, 32);
+  font-weight: 600;
+  color: $inputs-color;
+}
