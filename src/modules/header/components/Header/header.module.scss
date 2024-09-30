@@ -1,0 +1,14 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.headerLogo {
+  position: absolute;
+  top: 28px;
+  left: 64px;
+}

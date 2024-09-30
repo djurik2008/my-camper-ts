@@ -1,0 +1,21 @@
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 32px;
+}
+
+.navLink {
+  @include font(16, 24);
+  font-weight: 500;
+  color: $main-color;
+
+  &:hover,
+  &:focus {
+    color: $button-hover-color;
+  }
+}
+
+.activNavLink {
+  color: $button-hover-color;
+}
