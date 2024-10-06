@@ -1,0 +1,23 @@
+.catalogItemContainer {
+  display: flex;
+  column-gap: 24px;
+  padding: 24px;
+  border: 1px solid $gray-light-color;
+  border-radius: 20px;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  @include font(16, 24);
+  font-weight: 400;
+  color: $text-color;
+}
+
+.namePrice {
+  margin-bottom: 8px;
+}

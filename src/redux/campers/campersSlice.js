@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { getCampers } from './campersOperations';
+import { getAllCampers, getCampersByParams } from './campersOperations';
 
 const campersSlice = createSlice({
   name: 'campers',
@@ -9,30 +9,45 @@ const campersSlice = createSlice({
     list: [],
     selected: [],
     error: null,
+    isLoading: false,
   },
   reducers: {
-    addToSelected(state, { payload }) {
-      state.selected.push(payload);
-    },
-    removeFromSelected(state, { payload }) {
-      const filteredCamps = state.selected.filter(({ id }) => id !== payload);
-      state.selected = filteredCamps;
+    changeSelected(state, { payload }) {
+      const isAlreadySelected = state.selected.includes(payload);
+      if (isAlreadySelected) {
+        const filteredCamps = state.selected.filter((id) => id !== payload);
+        state.selected = filteredCamps;
+      } else {
+        state.selected.push(payload);
+      }
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getCampers.fulfilled, (state, { payload }) => {
+      .addCase(getAllCampers.fulfilled, (state, { payload }) => {
         state.list = payload;
         state.error = null;
       })
-      .addCase(getCampers.rejected, (state, action) => {
+      .addCase(getAllCampers.rejected, (state, action) => {
+        state.error = action.error.message || 'Failed to fetch campers';
+      })
+      .addCase(getCampersByParams.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getCampersByParams.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+        state.list = payload;
+      })
+      .addCase(getCampersByParams.rejected, (state, action) => {
+        state.isLoading = false;
         state.error = action.error.message || 'Failed to fetch campers';
       });
   },
 });
 
 const campersPersistConfig = {
-  key: 'root',
+  key: 'campers',
   storage,
   whitelist: ['selected'],
 };
@@ -42,4 +57,4 @@ export const persistedCampersReducer = persistReducer(
   campersSlice.reducer
 );
 
-export const { addToSelected, removeFromSelected } = campersSlice.actions;
+export const { changeSelected } = campersSlice.actions;

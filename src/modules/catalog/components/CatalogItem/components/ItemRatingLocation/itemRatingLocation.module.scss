@@ -1,0 +1,24 @@
+.ratingLocationContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.ratingLocationContainer p {
+  @include font(16, 24);
+  font-weight: 400;
+}
+
+.ratingLocationContainer p svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  fill: $main-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingIcon {
+  fill: $rating-color;
+}

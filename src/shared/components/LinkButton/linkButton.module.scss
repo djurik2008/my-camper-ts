@@ -1,0 +1,17 @@
+.linkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 173px;
+  height: 56px;
+  border-radius: 200px;
+  background: $button-color;
+
+  &:hover,
+  &:focus {
+    background: $button-hover-color;
+  }
+
+  @include font(16, 24);
+  color: $white-color;
+}
