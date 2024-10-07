@@ -12,7 +12,6 @@ export const MAIN_CAMP_ADVANTAGES = [
   'AC',
   'bathroom',
   'kitchen',
-  'microwave',
 ];
 
 export const CAMP_ADVANTAGES = [

@@ -9,32 +9,34 @@
   font-weight: 600;
 }
 
+.priceHeartContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
 .itemPrice {
   @include font(24, 32);
   font-weight: 600;
-}
-
-.checkboxContainer {
-  position: relative;
 }
 
 .checkbox {
   width: 0;
   height: 0;
   appearance: none;
+  position: absolute;
 }
 
 .iconCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 25px;
   height: 24px;
   fill: $main-color;
   cursor: pointer;
+}
 
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  .checkbox:checked {
-    fill: $button-color;
-  }
+.checked {
+  fill: $button-color;
 }

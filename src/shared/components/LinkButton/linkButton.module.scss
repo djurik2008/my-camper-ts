@@ -5,11 +5,11 @@
   width: 173px;
   height: 56px;
   border-radius: 200px;
-  background: $button-color;
+  background-color: $button-color;
 
   &:hover,
   &:focus {
-    background: $button-hover-color;
+    background-color: $button-hover-color;
   }
 
   @include font(16, 24);

@@ -1,21 +1,14 @@
 import { sprite } from 'shared/svg';
-import clsx from 'clsx';
 import s from './itemNamePriceHeart.module.scss';
+import clsx from 'clsx';
 
-const ItemNamePriceHeart = ({
-  id,
-  name,
-  price,
-  func,
-  isSelected,
-  className,
-}) => {
+const ItemNamePriceHeart = ({ id, name, price, func, isSelected }) => {
   return (
-    <div className={clsx(s.namePriceHeartContainer, className && className)}>
+    <div className={s.namePriceHeartContainer}>
       <h2 className={s.itemName}>{name}</h2>
-      <div>
-        <p className={s.itemPrice}>€{price}</p>
-        <span className={s.checkboxContainer}>
+      <div className={s.priceHeartContainer}>
+        <p className={s.itemPrice}>€{price.toFixed(2)}</p>
+        <label className={s.checkboxContainer}>
           <input
             type="checkbox"
             name="selected"
@@ -23,10 +16,10 @@ const ItemNamePriceHeart = ({
             checked={isSelected}
             className={s.checkbox}
           />
-          <svg className={s.iconCheckbox}>
+          <svg className={clsx(s.iconCheckbox, isSelected && s.checked)}>
             <use href={sprite + '#heart'}></use>
           </svg>
-        </span>
+        </label>
       </div>
     </div>
   );

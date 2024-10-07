@@ -7,6 +7,8 @@
 .ratingLocationContainer p {
   @include font(16, 24);
   font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
 .ratingLocationContainer p svg {
@@ -19,6 +21,6 @@
   justify-content: center;
 }
 
-.ratingIcon {
+.ratingLocationContainer .ratingIcon {
   fill: $rating-color;
 }

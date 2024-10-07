@@ -12,16 +12,16 @@ import { MAIN_CAMP_ADVANTAGES } from 'shared/constants';
 import s from './catalogItem.module.scss';
 
 const CatalogItem = ({ camper }) => {
-  const { id, name, price, rating, location, description } = camper;
+  const { id, name, price, rating, location, description, reviews } = camper;
   const dispatch = useDispatch();
   const selectedCampersId = useSelector(selectSelected);
   const isSelected = selectedCampersId.includes(id);
   const handleSelectionChange = (id) => dispatch(changeSelected(id));
-  const imgUrl = camper.gallery[0].original;
+  const imgUrl = camper.gallery[0].thumb;
 
   return (
     <div className={s.catalogItemContainer}>
-      <ItemImage imgUrl={imgUrl} />
+      <ItemImage imgUrl={imgUrl} imgAlt={name} />
       <div className={s.detailsContainer}>
         <div>
           <ItemNamePriceHeart
@@ -30,9 +30,12 @@ const CatalogItem = ({ camper }) => {
             name={name}
             func={handleSelectionChange}
             isSelected={isSelected}
-            className={s.namePrice}
           />
-          <ItemRatingLocation rating={rating} location={location} />
+          <ItemRatingLocation
+            rating={rating}
+            location={location}
+            reviewsCount={reviews.length}
+          />
         </div>
         <p className={s.description}>{description}</p>
         <BadgesList advantageKeys={MAIN_CAMP_ADVANTAGES} camperData={camper} />
