@@ -5,28 +5,43 @@ export const getAllCampers = createAsyncThunk(
   'campers/get',
   async (_, { rejectWithValue }) => {
     try {
-      const { items } = await campersApi.getAllCampers();
-      return items;
+      const data = await campersApi.getAllCampers();
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   },
   {
     condition(_, { getState }) {
-      const { list } = getState().campers;
-      return list.length === 0;
+      const { items } = getState().campers;
+      return items.length === 0;
     },
   }
 );
 
 export const getCampersByParams = createAsyncThunk(
-  'campersByParams/get',
+  'campers/getCampersByParams',
   async (params, { rejectWithValue }) => {
     try {
-      const { items } = await campersApi.getCampersByParamsApi(params);
-      return items;
+      const data = await campersApi.getCampersByParamsApi(params);
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
+  // {
+  //   condition(params, { getState }) {
+  //     const { campers } = getState();
+
+  //     const isLoadMore = params.page !== campers.prevPage;
+
+  //     const isPageSame = campers.page === params.page;
+
+  //     const hasCampers = campers.items.length > 0;
+  //     console.log(isLoadMore, isPageSame, hasCampers);
+  //     console.log(params.page, campers.prevPage);
+
+  //     return isLoadMore || !(isPageSame && hasCampers);
+  //   },
+  // }
 );

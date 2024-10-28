@@ -20,7 +20,7 @@ export const getAllCampers = async () => {
   return data;
 };
 
-export const getCampersByParamsApi = async ({ params = {} }) => {
+export const getCampersByParamsApi = async (params = {}) => {
   const { data } = await campersInstants.get('/campers', {
     params: { ...campersInstants.defaults.params, ...params },
   });

@@ -6,17 +6,29 @@ import { getAllCampers, getCampersByParams } from './campersOperations';
 const campersSlice = createSlice({
   name: 'campers',
   initialState: {
-    list: [],
+    items: [],
+    page: 1,
+    prevPage: null,
+    total: 0,
     selected: [],
     error: null,
     isLoading: false,
   },
   reducers: {
+    setPage: (state, { payload }) => {
+      state.prevPage = state.page;
+      state.page = payload;
+    },
+    clearCampers: (state) => {
+      state.items = [];
+      state.page = 1;
+      state.prevPage = null;
+      state.total = 0;
+    },
     changeSelected(state, { payload }) {
       const isAlreadySelected = state.selected.includes(payload);
       if (isAlreadySelected) {
-        const filteredCamps = state.selected.filter((id) => id !== payload);
-        state.selected = filteredCamps;
+        state.selected = state.selected.filter((id) => id !== payload);
       } else {
         state.selected.push(payload);
       }
@@ -24,24 +36,39 @@ const campersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAllCampers.fulfilled, (state, { payload }) => {
-        state.list = payload;
+      .addCase(getAllCampers.pending, (state) => {
+        state.isLoading = true;
         state.error = null;
       })
+      .addCase(
+        getAllCampers.fulfilled,
+        (state, { payload: { items, total } }) => {
+          state.isLoading = false;
+          state.items = items;
+          state.total = total;
+        }
+      )
       .addCase(getAllCampers.rejected, (state, action) => {
         state.error = action.error.message || 'Failed to fetch campers';
       })
       .addCase(getCampersByParams.pending, (state) => {
         state.isLoading = true;
-      })
-      .addCase(getCampersByParams.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
         state.error = null;
-        state.list = payload;
       })
-      .addCase(getCampersByParams.rejected, (state, action) => {
+      .addCase(
+        getCampersByParams.fulfilled,
+        (state, { payload: { items, total } }) => {
+          state.isLoading = false;
+          state.items?.length
+            ? (state.items = [...state.items, ...items])
+            : (state.items = items);
+          // state.items = items;
+          state.total = total;
+        }
+      )
+      .addCase(getCampersByParams.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.error = action.error.message || 'Failed to fetch campers';
+        state.error = payload || 'Failed to fetch campers';
       });
   },
 });
@@ -57,4 +84,4 @@ export const persistedCampersReducer = persistReducer(
   campersSlice.reducer
 );
 
-export const { changeSelected } = campersSlice.actions;
+export const { setPage, clearCampers, changeSelected } = campersSlice.actions;
