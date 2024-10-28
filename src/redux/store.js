@@ -9,10 +9,12 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { persistedCampersReducer } from './campers/campersSlice';
+import { camperReducer } from './camper/camperSlice';
 
 export const store = configureStore({
   reducer: {
     campers: persistedCampersReducer,
+    camper: camperReducer,
   },
   middleware: (gdm) =>
     gdm({
