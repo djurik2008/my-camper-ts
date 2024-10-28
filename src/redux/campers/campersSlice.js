@@ -1,19 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { getAllCampers, getCampersByParams } from './campersOperations';
+import { getCampersByParams } from './campersOperations';
+
+const initialState = {
+  items: [],
+  page: 1,
+  total: 0,
+  totalPages: 0,
+  selected: [],
+  error: null,
+  isLoading: false,
+};
+
+const limit = 4;
 
 const campersSlice = createSlice({
   name: 'campers',
-  initialState: {
-    items: [],
-    page: 1,
-    prevPage: null,
-    total: 0,
-    selected: [],
-    error: null,
-    isLoading: false,
-  },
+  initialState,
   reducers: {
     setPage: (state, { payload }) => {
       state.prevPage = state.page;
@@ -22,8 +26,8 @@ const campersSlice = createSlice({
     clearCampers: (state) => {
       state.items = [];
       state.page = 1;
-      state.prevPage = null;
       state.total = 0;
+      state.totalPages = 0;
     },
     changeSelected(state, { payload }) {
       const isAlreadySelected = state.selected.includes(payload);
@@ -36,21 +40,6 @@ const campersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAllCampers.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(
-        getAllCampers.fulfilled,
-        (state, { payload: { items, total } }) => {
-          state.isLoading = false;
-          state.items = items;
-          state.total = total;
-        }
-      )
-      .addCase(getAllCampers.rejected, (state, action) => {
-        state.error = action.error.message || 'Failed to fetch campers';
-      })
       .addCase(getCampersByParams.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -62,8 +51,8 @@ const campersSlice = createSlice({
           state.items?.length
             ? (state.items = [...state.items, ...items])
             : (state.items = items);
-          // state.items = items;
           state.total = total;
+          state.totalPages = Math.ceil(total / limit);
         }
       )
       .addCase(getCampersByParams.rejected, (state, { payload }) => {

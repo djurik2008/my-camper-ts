@@ -15,11 +15,6 @@ const campersInstants = axios.create({
   },
 });
 
-export const getAllCampers = async () => {
-  const { data } = await campersInstants.get('/campers');
-  return data;
-};
-
 export const getCampersByParamsApi = async (params = {}) => {
   const { data } = await campersInstants.get('/campers', {
     params: { ...campersInstants.defaults.params, ...params },

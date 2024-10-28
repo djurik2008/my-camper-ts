@@ -29,19 +29,4 @@ export const getCampersByParams = createAsyncThunk(
       return rejectWithValue(error.message);
     }
   }
-  // {
-  //   condition(params, { getState }) {
-  //     const { campers } = getState();
-
-  //     const isLoadMore = params.page !== campers.prevPage;
-
-  //     const isPageSame = campers.page === params.page;
-
-  //     const hasCampers = campers.items.length > 0;
-  //     console.log(isLoadMore, isPageSame, hasCampers);
-  //     console.log(params.page, campers.prevPage);
-
-  //     return isLoadMore || !(isPageSame && hasCampers);
-  //   },
-  // }
 );
