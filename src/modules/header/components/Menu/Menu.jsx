@@ -19,6 +19,7 @@ const Menu = () => {
       <li className={s.navListItem}>
         <NavLink
           to={ROUTES.CATALOG}
+          end
           className={({ isActive }) =>
             clsx(s.navLink, isActive && s.activNavLink)
           }

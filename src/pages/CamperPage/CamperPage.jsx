@@ -4,14 +4,14 @@ import { useEffect } from 'react';
 import { getCamperById } from '@redux/camper/camperOperations';
 import { selectCamper } from '@redux/camper/camperSelectors';
 import { resetCamper } from '@redux/camper/camperSlice';
-import s from './camperPage.module.scss';
+import { CamperPageItem } from 'modules/camperPageItem';
+// import s from './camperPage.module.scss';
 
 const CamperPage = () => {
   const dispatch = useDispatch();
   const { camperId } = useParams();
 
   const camper = useSelector(selectCamper);
-  console.log(camper);
 
   useEffect(() => {
     dispatch(getCamperById(Number(camperId)));
@@ -19,7 +19,7 @@ const CamperPage = () => {
     return () => dispatch(resetCamper());
   }, [dispatch, camperId]);
 
-  return <h1 className={s.title}>{camper && camper.name}</h1>;
+  return camper && <CamperPageItem camper={camper} />;
 };
 
 export default CamperPage;

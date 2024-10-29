@@ -1,11 +1,21 @@
 .camperName {
   @include font(24, 32);
   font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.camperRatingLocationBlok {
+  margin-bottom: 16px;
 }
 
 .camperPrice {
   @include font(24, 32);
   font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.camperGallery {
+  margin-bottom: 28px;
 }
 
 .camperDescription {

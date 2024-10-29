@@ -14,9 +14,10 @@ const CamperPageItem = ({ camper }) => {
         rating={rating}
         location={location}
         reviewsCount={reviews.length}
+        className={s.camperRatingLocationBlok}
       />
       <p className={s.camperPrice}>€{price.toFixed(2)}</p>
-      <CamperGallery gallery={gallery} />
+      <CamperGallery gallery={gallery} className={s.camperGallery} />
       <p className={s.camperDescription}>{description}</p>
     </Container>
   );
