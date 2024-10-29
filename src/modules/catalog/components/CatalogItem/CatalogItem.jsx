@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { ItemImage, ItemNamePriceHeart } from './components';
 import {
-  ItemImage,
-  ItemNamePriceHeart,
-  ItemRatingLocation,
-} from './components';
-import { BadgesList, LinkButton } from 'shared/components';
+  BadgesList,
+  LinkButton,
+  CamperRatingLocation,
+} from 'shared/components';
 import { ROUTES } from 'shared/constants';
 import { selectSelected } from '@redux/campers/campersSelectors';
 import { changeSelected } from '@redux/campers/campersSlice';
@@ -31,7 +31,7 @@ const CatalogItem = ({ camper }) => {
             func={handleSelectionChange}
             isSelected={isSelected}
           />
-          <ItemRatingLocation
+          <CamperRatingLocation
             rating={rating}
             location={location}
             reviewsCount={reviews.length}

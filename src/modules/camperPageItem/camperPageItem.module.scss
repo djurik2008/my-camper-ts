@@ -1,0 +1,15 @@
+.camperName {
+  @include font(24, 32);
+  font-weight: 600;
+}
+
+.camperPrice {
+  @include font(24, 32);
+  font-weight: 600;
+}
+
+.camperDescription {
+  @include font(16, 24);
+  font-weight: 400;
+  color: $text-color;
+}

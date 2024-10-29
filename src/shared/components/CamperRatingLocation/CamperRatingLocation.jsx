@@ -1,9 +1,15 @@
+import clsx from 'clsx';
 import { sprite } from 'shared/svg';
-import s from './itemRatingLocation.module.scss';
+import s from './camperRatingLocation.module.scss';
 
-const ItemRatingLocation = ({ rating, location, reviewsCount }) => {
+const CamperRatingLocation = ({
+  rating,
+  location,
+  reviewsCount,
+  className = null,
+}) => {
   return (
-    <div className={s.ratingLocationContainer}>
+    <div className={clsx(s.ratingLocationContainer, className && className)}>
       <p className={s.rating}>
         <svg className={s.ratingIcon}>
           <use href={sprite + '#star'}></use>
@@ -20,4 +26,4 @@ const ItemRatingLocation = ({ rating, location, reviewsCount }) => {
   );
 };
 
-export default ItemRatingLocation;
+export default CamperRatingLocation;

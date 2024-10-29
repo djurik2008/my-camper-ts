@@ -8,6 +8,11 @@ const camperSlice = createSlice({
     isLoading: false,
     error: null,
   },
+  reducers: {
+    resetCamper: (state) => {
+      state.camper = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCamperById.pending, (state) => {
@@ -24,5 +29,7 @@ const camperSlice = createSlice({
       });
   },
 });
+
+export const { resetCamper } = camperSlice.actions;
 
 export const camperReducer = camperSlice.reducer;
