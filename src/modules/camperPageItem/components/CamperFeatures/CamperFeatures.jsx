@@ -1,9 +1,13 @@
+import { useSelector } from 'react-redux';
+import { selectCamper } from '@redux/camper/camperSelectors';
 import { BadgesList } from 'shared/components';
 import { CAMP_ADVANTAGES } from 'shared/constants';
 import { VEHICLE_DETAILS } from 'shared/constants';
 import s from './camperFeatures.module.scss';
 
-const CamperFeatures = ({ camper }) => {
+const CamperFeatures = () => {
+  const camper = useSelector(selectCamper);
+
   return (
     <div className={s.featuresContainer}>
       <BadgesList

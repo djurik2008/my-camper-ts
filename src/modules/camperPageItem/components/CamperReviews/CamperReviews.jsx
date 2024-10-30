@@ -1,7 +1,11 @@
+import { useSelector } from 'react-redux';
+import { selectCamper } from '@redux/camper/camperSelectors';
 import { ReviewerBadge, ReviewerRate } from './components';
 import s from './camperReviews.module.scss';
 
-const CamperReviews = ({ reviews }) => {
+const CamperReviews = () => {
+  const { reviews } = useSelector(selectCamper);
+
   return (
     <ul className={s.reviewsList}>
       {reviews.map((review, idx) => (
