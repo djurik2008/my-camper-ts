@@ -27,3 +27,12 @@ export const CAMP_ADVANTAGES = [
   'gas',
   'water',
 ];
+
+export const VEHICLE_DETAILS = [
+  'form',
+  'length',
+  'width',
+  'height',
+  'tank',
+  'consumption',
+];

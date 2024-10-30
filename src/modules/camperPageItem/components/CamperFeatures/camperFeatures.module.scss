@@ -1,0 +1,26 @@
+.featuresContainer {
+  padding: 44px 52px;
+  width: 631px;
+}
+
+.badgeslist {
+  margin-bottom: 100px;
+}
+
+.detailsTitle {
+  @include font(20, 24);
+  font-weight: 600;
+  margin-bottom: 48px;
+}
+
+.detailsItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detailsFeatures {
+  @include font(16, 24);
+  text-transform: capitalize;
+}
