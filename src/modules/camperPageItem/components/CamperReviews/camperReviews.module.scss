@@ -1,0 +1,24 @@
+.reviewsList {
+  width: 631px;
+}
+
+.reviewsItem:not(:last-child) {
+  margin-bottom: 44px;
+}
+
+.badgeNameRatingContainer {
+  display: flex;
+  column-gap: 16px;
+  margin-bottom: 16px;
+}
+
+.reviewName {
+  @include font(16, 24);
+  margin-bottom: 4px;
+}
+
+.reviewComment {
+  @include font(16, 24);
+  font-weight: 400;
+  color: $text-color;
+}

@@ -2,6 +2,7 @@ import { Container } from 'shared/components';
 import { CamperRatingLocation } from 'shared/components';
 import { CamperGallery } from '.';
 import { CamperFeatures } from '.';
+import { CamperReviews } from '.';
 import s from './camperPageItem.module.scss';
 
 const CamperPageItem = ({ camper }) => {
@@ -21,6 +22,7 @@ const CamperPageItem = ({ camper }) => {
       <CamperGallery gallery={gallery} className={s.camperGallery} />
       <p className={s.camperDescription}>{description}</p>
       <CamperFeatures camper={camper} />
+      <CamperReviews reviews={reviews} />
     </Container>
   );
 };
