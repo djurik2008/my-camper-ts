@@ -23,8 +23,6 @@ const CamperPageItem = ({ camper }) => {
       <CamperGallery gallery={gallery} className={s.camperGallery} />
       <p className={s.camperDescription}>{description}</p>
       <FeaturesReviewsTabs />
-      {/* <CamperFeatures camper={camper} />
-      <CamperReviews reviews={reviews} /> */}
     </Container>
   );
 };
