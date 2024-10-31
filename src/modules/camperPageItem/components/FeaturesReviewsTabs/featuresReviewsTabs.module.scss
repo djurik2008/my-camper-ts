@@ -1,4 +1,28 @@
+.tabsList {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  padding-bottom: 24px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid $gray-light-color;
+}
+
 .tabName {
   @include font(20, 24);
   font-weight: 600;
+  cursor: pointer;
+}
+
+.tabActive {
+  position: relative;
+
+  &::after {
+    content: '';
+    border-bottom: 5px solid $button-color;
+    border-radius: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -26px;
+  }
 }
