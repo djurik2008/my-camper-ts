@@ -1,0 +1,41 @@
+.locationLabel {
+  position: relative;
+}
+
+.inputTitle {
+  @include font(16, 24);
+  font-weight: 400;
+  color: $gray-color;
+  margin-bottom: 8px;
+}
+
+.locationInput {
+  @include font(16, 24);
+  padding: 18px 46px;
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  background-color: $inputs-color;
+
+  &::placeholder {
+    @include font(16, 24);
+    font-weight: 400;
+    color: $gray-color;
+  }
+}
+
+.inputIcon {
+  width: 20px;
+  height: 20px;
+  fill: $gray-color;
+
+  position: absolute;
+  left: 20px;
+  top: 38px;
+
+  .locationInput:focus ~ & {
+    fill: $main-color;
+  }
+}

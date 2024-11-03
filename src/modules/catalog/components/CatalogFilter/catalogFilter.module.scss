@@ -1,0 +1,49 @@
+.filterForm {
+  width: 360px;
+}
+
+.locationInput {
+  margin-bottom: 40px;
+}
+
+.filtersTitle {
+  @include font(16, 24);
+  color: $text-color;
+  margin-bottom: 32px;
+}
+
+.filterBlockName {
+  @include font(20, 24);
+  font-weight: 600;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $gray-light-color;
+}
+
+.equipmentOptions {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 8px;
+  padding-top: 24px;
+  margin-bottom: 32px;
+}
+
+.typeOptions {
+  display: flex;
+  column-gap: 12px;
+  padding-top: 24px;
+  margin-bottom: 40px;
+}
+
+.searchButton {
+  @include font(16, 24);
+  color: $white-color;
+  padding: 16px 56.5px;
+  border-radius: 60px;
+  background-color: $button-color;
+
+  &:hover,
+  &:focus {
+    background-color: $button-hover-color;
+  }
+}

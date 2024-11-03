@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useMemo } from 'react';
 import { CatalogList } from 'modules/catalog';
+import { CatalogFilter } from 'modules/catalog';
 import { Container, LoadMoreButton } from 'shared/components';
 import {
   selectCampersItems,
@@ -42,7 +43,7 @@ const CatalogPage = () => {
 
   return (
     <Container className={s.catalogPageContainer}>
-      <div style={{ width: '360px', minHeight: '100vh' }}></div>
+      <CatalogFilter />
       <div>
         <CatalogList campersList={items} />
         {page < totalPages && <LoadMoreButton funk={loadMore} />}

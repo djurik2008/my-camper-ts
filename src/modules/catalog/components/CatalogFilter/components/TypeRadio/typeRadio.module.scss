@@ -1,0 +1,36 @@
+.checkboxRadio {
+  display: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.customCheckboxRadio {
+  width: 112px;
+  height: 96px;
+  border: 1px solid $gray-light-color;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.checkboxRadioIcon {
+  width: 33px;
+  height: 33px;
+  fill: $main-color;
+}
+
+.checkboxRadioName {
+  @include font(16, 24);
+  text-transform: capitalize;
+}
+
+.checked {
+  border-color: $button-color;
+}
