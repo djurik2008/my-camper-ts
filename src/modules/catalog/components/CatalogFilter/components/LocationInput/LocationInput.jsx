@@ -11,6 +11,7 @@ const LocationInput = ({ field, className = null }) => {
         placeholder="City"
         {...field}
         className={s.locationInput}
+        autoComplete="off"
       />
       <svg className={s.inputIcon}>
         <use href={sprite + '#map'} />

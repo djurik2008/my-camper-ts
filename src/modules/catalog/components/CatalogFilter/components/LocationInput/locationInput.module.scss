@@ -38,4 +38,8 @@
   .locationInput:focus ~ & {
     fill: $main-color;
   }
+
+  .locationInput:not(:placeholder-shown) ~ & {
+    fill: $main-color;
+  }
 }
