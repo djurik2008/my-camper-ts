@@ -25,60 +25,62 @@ const CatalogFilter = ({ className = null }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className={clsx(s.filterForm, className && className)}
-    >
-      <Controller
-        name="location"
-        control={control}
-        render={({ field }) => (
-          <LocationInput field={field} className={s.locationInput} />
-        )}
-      />
+    <section className={s.filtersSection}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={clsx(s.filterForm, className && className)}
+      >
+        <Controller
+          name="location"
+          control={control}
+          render={({ field }) => (
+            <LocationInput field={field} className={s.locationInput} />
+          )}
+        />
 
-      <p className={s.filtersTitle}>Filters</p>
+        <p className={s.filtersTitle}>Filters</p>
 
-      <div>
-        <p className={s.filterBlockName}>Vehicle equipment</p>
-        <div className={s.equipmentOptions}>
-          {['AC', 'transmission', 'kitchen', 'TV', 'bathroom'].map((item) => (
-            <Controller
-              key={item}
-              name={item}
-              control={control}
-              render={({ field: { value, onChange } }) => (
-                <EquipmentCheckbox
-                  item={item}
-                  value={value}
-                  onChange={onChange}
-                />
-              )}
-            />
-          ))}
+        <div>
+          <p className={s.filterBlockName}>Vehicle equipment</p>
+          <div className={s.equipmentOptions}>
+            {['AC', 'transmission', 'kitchen', 'TV', 'bathroom'].map((item) => (
+              <Controller
+                key={item}
+                name={item}
+                control={control}
+                render={({ field: { value, onChange } }) => (
+                  <EquipmentCheckbox
+                    item={item}
+                    value={value}
+                    onChange={onChange}
+                  />
+                )}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div>
-        <p className={s.filterBlockName}>Vehicle type</p>
-        <div className={s.typeOptions}>
-          {['van', 'fullyIntegrated', 'alcove'].map((type) => (
-            <Controller
-              key={type}
-              name="form"
-              control={control}
-              render={({ field: { value, onChange } }) => (
-                <TypeRadio type={type} value={value} onChange={onChange} />
-              )}
-            />
-          ))}
+        <div>
+          <p className={s.filterBlockName}>Vehicle type</p>
+          <div className={s.typeOptions}>
+            {['van', 'fullyIntegrated', 'alcove'].map((type) => (
+              <Controller
+                key={type}
+                name="form"
+                control={control}
+                render={({ field: { value, onChange } }) => (
+                  <TypeRadio type={type} value={value} onChange={onChange} />
+                )}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      <button type="submit" className={s.searchButton}>
-        Search
-      </button>
-    </form>
+        <button type="submit" className={s.searchButton}>
+          Search
+        </button>
+      </form>
+    </section>
   );
 };
 

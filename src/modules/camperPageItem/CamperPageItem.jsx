@@ -1,8 +1,6 @@
 import { Container } from 'shared/components';
 import { CamperRatingLocation } from 'shared/components';
 import { CamperGallery } from '.';
-// import { CamperFeatures } from '.';
-// import { CamperReviews } from '.';
 import { FeaturesReviewsTabs } from '.';
 import s from './camperPageItem.module.scss';
 
