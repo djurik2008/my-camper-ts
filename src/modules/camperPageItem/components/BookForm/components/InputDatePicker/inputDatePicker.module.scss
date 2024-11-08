@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.datePicker {
+  @include font(16, 24);
+  font-weight: 400;
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  border-color: $inputs-color;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $button-color;
+  }
+}

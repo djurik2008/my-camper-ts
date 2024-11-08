@@ -23,6 +23,9 @@ export default defineConfig({
         additionalData: globalStylesOptions,
       },
     },
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
   },
   base: '/my-camper',
 });

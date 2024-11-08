@@ -5,7 +5,7 @@ import { getCamperById } from '@redux/camper/camperOperations';
 import { selectCamper } from '@redux/camper/camperSelectors';
 import { resetCamper } from '@redux/camper/camperSlice';
 import { CamperPageItem } from 'modules/camperPageItem';
-// import s from './camperPage.module.scss';
+import s from './camperPage.module.scss';
 
 const CamperPage = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,11 @@ const CamperPage = () => {
     return () => dispatch(resetCamper());
   }, [dispatch, camperId]);
 
-  return camper && <CamperPageItem camper={camper} />;
+  return (
+    <main className={s.camperPageMain}>
+      {camper && <CamperPageItem camper={camper} />}
+    </main>
+  );
 };
 
 export default CamperPage;

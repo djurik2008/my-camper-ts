@@ -1,7 +1,6 @@
 import { Container } from 'shared/components';
 import { CamperRatingLocation } from 'shared/components';
-import { CamperGallery } from '.';
-import { FeaturesReviewsTabs } from '.';
+import { CamperGallery, FeaturesReviewsTabs, BookForm } from '.';
 import s from './camperPageItem.module.scss';
 
 const CamperPageItem = ({ camper }) => {
@@ -20,7 +19,9 @@ const CamperPageItem = ({ camper }) => {
       <p className={s.camperPrice}>€{price.toFixed(2)}</p>
       <CamperGallery gallery={gallery} className={s.camperGallery} />
       <p className={s.camperDescription}>{description}</p>
-      <FeaturesReviewsTabs />
+      <FeaturesReviewsTabs>
+        <BookForm />
+      </FeaturesReviewsTabs>
     </Container>
   );
 };

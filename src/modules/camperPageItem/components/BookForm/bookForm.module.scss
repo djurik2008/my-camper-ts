@@ -1,0 +1,70 @@
+.bookformSection {
+  padding: 44px;
+  border: 1px solid $gray-light-color;
+  border-radius: 10px;
+  margin-left: 40px;
+}
+
+.formTitle {
+  @include font(20, 24);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.suportingText {
+  @include font(16, 24);
+  font-weight: 400;
+  color: $gray-color;
+  margin-bottom: 24px;
+}
+
+.bookForm {
+  text-align: center;
+}
+
+.textInput {
+  @include font(16, 24);
+  font-weight: 400;
+  width: 100%;
+  height: 60px;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background-color: $inputs-color;
+
+  &::placeholder {
+    @include font(16, 24);
+    font-weight: 400;
+    color: $gray-color;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $button-color;
+  }
+}
+
+.commentTextarea {
+  @include font(16, 24);
+  font-weight: 400;
+  padding: 18px;
+  width: 100%;
+  height: 118px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  resize: none;
+  background-color: $inputs-color;
+
+  &::placeholder {
+    @include font(16, 24);
+    font-weight: 400;
+    color: $gray-color;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $button-color;
+  }
+}

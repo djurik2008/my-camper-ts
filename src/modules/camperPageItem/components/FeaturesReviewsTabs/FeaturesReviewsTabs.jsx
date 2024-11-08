@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { CamperFeatures, CamperReviews } from 'modules/camperPageItem';
 import s from './featuresReviewsTabs.module.scss';
 
-const FeaturesReviewsTabs = () => {
+const FeaturesReviewsTabs = ({ children }) => {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabSelect = (index) => {
@@ -24,12 +24,15 @@ const FeaturesReviewsTabs = () => {
           Reviews
         </Tab>
       </TabList>
-      <TabPanel>
-        <CamperFeatures />
-      </TabPanel>
-      <TabPanel>
-        <CamperReviews />
-      </TabPanel>
+      <div className={s.tabsChildrenWrapper}>
+        <TabPanel>
+          <CamperFeatures />
+        </TabPanel>
+        <TabPanel>
+          <CamperReviews />
+        </TabPanel>
+        {children}
+      </div>
     </Tabs>
   );
 };

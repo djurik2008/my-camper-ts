@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { setFilter } from '@redux/filter/filterSlice';
 import { EquipmentCheckbox, TypeRadio, LocationInput } from './components';
+import { SubmitButton } from 'shared/components';
 import s from './catalogFilter.module.scss';
 
 const CatalogFilter = ({ className = null }) => {
@@ -76,9 +77,7 @@ const CatalogFilter = ({ className = null }) => {
           </div>
         </div>
 
-        <button type="submit" className={s.searchButton}>
-          Search
-        </button>
+        <SubmitButton text={'Search'} />
       </form>
     </section>
   );

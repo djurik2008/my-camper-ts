@@ -68,6 +68,11 @@ img {
 a {
   text-decoration: inherit;
 }
-// a:hover {
-//   color: inherit;
-// }
+
+* :hover,
+* :focus {
+  transition:
+    background-color 200ms ease-in,
+    border-color 200ms ease-in,
+    color 200ms ease-in;
+}
