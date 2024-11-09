@@ -17,6 +17,8 @@ const EquipmentCheckbox = ({ item, value, onChange }) => {
                 ? 'automatic'
                 : ''
               : e.target.checked
+                ? true
+                : ''
           );
         }}
       />

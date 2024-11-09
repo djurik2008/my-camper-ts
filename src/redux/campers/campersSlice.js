@@ -20,7 +20,6 @@ const campersSlice = createSlice({
   initialState,
   reducers: {
     setPage: (state, { payload }) => {
-      state.prevPage = state.page;
       state.page = payload;
     },
     clearCampers: (state) => {

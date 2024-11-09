@@ -11,7 +11,9 @@ const TypeRadio = ({ type, value, onChange }) => {
         name="typeOptions"
         value={type}
         checked={value === type}
-        onChange={() => onChange(type)}
+        onChange={(e) => {
+          onChange(e.target.checked ? type : '');
+        }}
       />
       <span
         className={clsx(s.customCheckboxRadio, value === type && s.checked)}

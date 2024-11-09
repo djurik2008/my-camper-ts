@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialFilter = {
   location: '',
-  AC: false,
+  AC: '',
   transmission: '',
-  kitchen: false,
-  TV: false,
-  bathroom: false,
+  kitchen: '',
+  TV: '',
+  bathroom: '',
   form: '',
 };
 

@@ -2,6 +2,7 @@ import { useForm, Controller } from 'react-hook-form';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { setFilter } from '@redux/filter/filterSlice';
+import { clearCampers } from '@redux/campers/campersSlice';
 import { EquipmentCheckbox, TypeRadio, LocationInput } from './components';
 import { SubmitButton } from 'shared/components';
 import s from './catalogFilter.module.scss';
@@ -10,11 +11,11 @@ const CatalogFilter = ({ className = null }) => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
       location: '',
-      AC: false,
+      AC: '',
       transmission: '',
-      kitchen: false,
-      TV: false,
-      bathroom: false,
+      kitchen: '',
+      TV: '',
+      bathroom: '',
       form: '',
     },
   });
@@ -22,6 +23,7 @@ const CatalogFilter = ({ className = null }) => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
+    dispatch(clearCampers());
     dispatch(setFilter(data));
   };
 
