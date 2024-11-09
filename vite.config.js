@@ -27,5 +27,6 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly',
     },
   },
+  base: './',
   // base: '/my-camper',
 });
