@@ -3,7 +3,7 @@ import { selectCampersItems } from '@redux/campers/campersSelectors';
 import { CatalogItem } from 'modules/catalog';
 import s from './catalogList.module.scss';
 
-const CatalogList = () => {
+const CatalogList = ({ children }) => {
   const campers = useSelector(selectCampersItems);
 
   return (
@@ -15,6 +15,7 @@ const CatalogList = () => {
           </li>
         ))}
       </ul>
+      {children}
     </section>
   );
 };

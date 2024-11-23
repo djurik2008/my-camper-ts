@@ -1,14 +1,35 @@
 .heroSection {
-  padding: 260px 805px 260px 64px;
+  height: calc(
+    100vh - 2 * var(--header-padding) - var(--header-content-height)
+  );
+
+  display: flex;
+  align-items: center;
   background: $gray-color;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     image-set(
-      url('./images/hero-bg@1x.jpg') 1x,
-      url('./images/hero-bg@2x.jpg') 2x
+      url('./images/hero-bg-m@1x.webp') 1x,
+      url('./images/hero-bg-m@2x.webp') 2x
     );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include media(tablet) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      image-set(
+        url('./images/hero-bg-t@1x.webp') 1x,
+        url('./images/hero-bg-t@2x.webp') 2x
+      );
+  }
+
+  @include media(desktop) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      image-set(
+        url('./images/hero-bg-d@1x.webp') 1x,
+        url('./images/hero-bg-d@2x.webp') 2x
+      );
+  }
 }
 
 .heroTitle {

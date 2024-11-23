@@ -1,7 +1,8 @@
 export const globalStylesOptions = `
-  @import "shared/styles/_variables.scss";
-  @import "shared/styles/_fonts.scss";
-  @import "shared/styles/_colors.scss";
-  @import "shared/styles/_mixins.scss";
+  @use "shared/styles/_variables.scss";
+  @use "shared/styles/_fonts.scss";
+  @use "shared/styles/_colors.scss";
+  @use "shared/styles/_mixins.scss";
+  @use "shared/styles/_breakpoints.scss";
 `;
 // @import "shared/styles/_base.scss";

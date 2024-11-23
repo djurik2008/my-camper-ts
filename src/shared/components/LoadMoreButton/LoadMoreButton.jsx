@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import { Loader } from '..';
 import s from './loadMoreButton.module.scss';
 
-const LoadMoreButton = ({ funk, className = null, isLoading }) => {
+const LoadMoreButton = ({ onClick, className = '', isLoading }) => {
   return (
     <button
       type="button"
-      className={clsx(s.loadMoreBtn, className && className)}
-      onClick={() => funk()}
+      className={clsx(s.loadMoreBtn, className)}
+      onClick={onClick}
     >
       {isLoading ? <Loader type={'button'} /> : 'Load more'}
     </button>

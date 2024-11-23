@@ -1,23 +1,26 @@
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useRef } from 'react';
 import { setFilter } from '@redux/filter/filterSlice';
+import { selectFilter } from '@redux/filter/filterSelectors';
 import { clearCampers } from '@redux/campers/campersSlice';
-import { EquipmentCheckbox, TypeRadio, LocationInput } from './components';
+import { useOutsideClickWithButton } from 'hooks/useOutsideClickWithButton';
+import { LocationFilter, VehicleEquipments, VehicleTypes } from './components';
 import { SubmitButton } from 'shared/components';
 import s from './catalogFilter.module.scss';
 
-const CatalogFilter = ({ className = null }) => {
+const CatalogFilter = ({
+  className = null,
+  isOpen = null,
+  onClose = null,
+  filtersBtnRef = null,
+}) => {
+  const filter = useSelector(selectFilter);
+  const filterSectionRef = useRef(null);
+
   const { control, handleSubmit } = useForm({
-    defaultValues: {
-      location: '',
-      AC: '',
-      transmission: '',
-      kitchen: '',
-      TV: '',
-      bathroom: '',
-      form: '',
-    },
+    defaultValues: filter,
   });
 
   const dispatch = useDispatch();
@@ -25,61 +28,29 @@ const CatalogFilter = ({ className = null }) => {
   const onSubmit = (data) => {
     dispatch(clearCampers());
     dispatch(setFilter(data));
+    if (onClose) onClose();
   };
 
+  useOutsideClickWithButton(filterSectionRef, filtersBtnRef, isOpen, onClose);
+
   return (
-    <section className={s.filtersSection}>
+    <section
+      className={clsx(s.filtersSection, isOpen && s.open, className)}
+      ref={filterSectionRef}
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={clsx(s.filterForm, className && className)}
+        className={clsx(s.filterForm, isOpen && s.open)}
       >
-        <Controller
-          name="location"
-          control={control}
-          render={({ field }) => (
-            <LocationInput field={field} className={s.locationInput} />
-          )}
-        />
+        <LocationFilter control={control} className={s.locationFilter} />
 
         <p className={s.filtersTitle}>Filters</p>
 
-        <div>
-          <p className={s.filterBlockName}>Vehicle equipment</p>
-          <div className={s.equipmentOptions}>
-            {['AC', 'transmission', 'kitchen', 'TV', 'bathroom'].map((item) => (
-              <Controller
-                key={item}
-                name={item}
-                control={control}
-                render={({ field: { value, onChange } }) => (
-                  <EquipmentCheckbox
-                    item={item}
-                    value={value}
-                    onChange={onChange}
-                  />
-                )}
-              />
-            ))}
-          </div>
-        </div>
+        <VehicleEquipments control={control} className={s.vehicleEquipments} />
 
-        <div>
-          <p className={s.filterBlockName}>Vehicle type</p>
-          <div className={s.typeOptions}>
-            {['van', 'fullyIntegrated', 'alcove'].map((type) => (
-              <Controller
-                key={type}
-                name="form"
-                control={control}
-                render={({ field: { value, onChange } }) => (
-                  <TypeRadio type={type} value={value} onChange={onChange} />
-                )}
-              />
-            ))}
-          </div>
-        </div>
+        <VehicleTypes control={control} className={s.vehicleTypes} />
 
-        <SubmitButton text={'Search'} />
+        <SubmitButton text={'Search'} className={s.responsiveSubBtn} />
       </form>
     </section>
   );

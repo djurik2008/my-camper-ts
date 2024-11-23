@@ -1,0 +1,23 @@
+.filtersButton {
+  width: 100%;
+  height: 48px;
+  border: 1px solid $gray-light-color;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.buttonText {
+  @include font(16, 24);
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: $main-color;
+}

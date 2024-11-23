@@ -2,6 +2,7 @@
   padding: 16px 32px;
   @include font(16, 24);
   color: $main-color;
+  font-weight: 500;
   border: 1px solid $gray-light-color;
   border-radius: 200px;
 

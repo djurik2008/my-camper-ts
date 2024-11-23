@@ -1,4 +1,5 @@
-.locationLabel {
+.locationInputLabel {
+  display: block;
   position: relative;
 }
 
@@ -9,16 +10,20 @@
   margin-bottom: 8px;
 }
 
-.locationInput {
+.cityInput {
   @include font(16, 24);
   font-weight: 400;
-  padding: 18px 46px;
+  padding: 12px 46px;
   width: 100%;
-  height: 56px;
+  height: 46px;
   border: none;
   border-radius: 10px;
-  margin-bottom: 40px;
   background-color: $inputs-color;
+
+  @include media(desktop) {
+    height: 56px;
+    padding: 18px 46px;
+  }
 
   &::placeholder {
     @include font(16, 24);
@@ -41,11 +46,11 @@
   left: 20px;
   top: 38px;
 
-  .locationInput:focus ~ & {
+  .cityInput:focus ~ & {
     fill: $main-color;
   }
 
-  .locationInput:not(:placeholder-shown) ~ & {
+  .cityInput:not(:placeholder-shown) ~ & {
     fill: $main-color;
   }
 }

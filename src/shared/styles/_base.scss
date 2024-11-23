@@ -1,5 +1,6 @@
-@import './colors';
-@import './variables';
+@use './mixins' as *;
+@use './colors' as *;
+@use './variables.scss' as *;
 
 :root {
   font-family:
@@ -28,6 +29,16 @@ html {
 
 body {
   margin: 0;
+  --header-padding: 16px;
+  --header-content-height: 40px;
+
+  @include media(tablet) {
+    --header-content-height: 20px;
+  }
+
+  @include media(desktop) {
+    --header-padding: 24px;
+  }
 }
 
 h1,

@@ -4,13 +4,13 @@ import s from './locationInput.module.scss';
 
 const LocationInput = ({ field, className = null }) => {
   return (
-    <label className={clsx(s.locationLabel, className && className)}>
+    <label className={clsx(s.locationInputLabel, className)}>
       <span className={s.inputTitle}>Location</span>
       <input
         type="text"
         placeholder="City"
         {...field}
-        className={s.locationInput}
+        className={s.cityInput}
         autoComplete="off"
       />
       <svg className={s.inputIcon}>

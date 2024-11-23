@@ -1,36 +1,62 @@
-.checkboxRadio {
+.typeRadio {
   display: none;
   appearance: none;
   width: 0;
   height: 0;
 }
 
-.customCheckboxRadio {
-  width: 112px;
-  height: 96px;
-  border: 1px solid $gray-light-color;
-  border-radius: 12px;
+.customTypeRadio {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  row-gap: 8px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
+  column-gap: 8px;
+
+  @include media(desktop) {
+    width: 112px;
+    height: 96px;
+    border: 1px solid $gray-light-color;
+    border-radius: 12px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    cursor: pointer;
+
+    .typeRadio:checked + & {
+      border-color: $button-color;
+    }
+  }
 }
 
-.checkboxRadioIcon {
-  width: 33px;
-  height: 33px;
-  fill: $main-color;
+.customTypeRadioIcon {
+  @include media(to-tablet) {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid $gray-light-color;
+    border-radius: 5px;
+    fill: $main-color;
+
+    .typeRadio:checked + .customTypeRadio & {
+      border-color: $button-color;
+    }
+  }
+
+  @include media(desktop) {
+    width: 33px;
+    height: 33px;
+    fill: $main-color;
+  }
 }
 
-.checkboxRadioName {
+.customTypeRadioName {
   @include font(16, 24);
+  font-weight: 400;
   text-transform: capitalize;
-}
 
-.checked {
-  border-color: $button-color;
+  @include media(desktop) {
+    font-weight: 500;
+  }
 }

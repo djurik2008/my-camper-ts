@@ -1,19 +1,40 @@
 .header {
-  border-bottom: 1px solid $badges-color;
   background-color: $inputs-color;
+
+  @include media(to-tablet) {
+    // max-height: 48px;
+    position: relative;
+    z-index: 10;
+  }
 }
 
 .headerWrapper {
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  justify-content: space-between;
+
+  @include media(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .headerLogo {
-  position: absolute;
-  top: 28px;
-  left: 64px;
+  flex-shrink: 0;
 }
+
+.menuCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// .mobileMenuButton {
+//   position: absolute;
+//   top: 8px;
+//   right: 8px;
+// }

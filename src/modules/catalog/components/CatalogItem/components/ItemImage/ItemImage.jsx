@@ -6,8 +6,10 @@ const ItemImage = ({ className = null, imgUrl, imgAlt }) => {
     <img
       src={imgUrl}
       alt={imgAlt}
-      className={clsx(s.itemImage, className && className)}
-      width={'292'}
+      className={clsx(s.itemImage, className)}
+      width="292"
+      height="320"
+      loading="lazy"
     />
   );
 };

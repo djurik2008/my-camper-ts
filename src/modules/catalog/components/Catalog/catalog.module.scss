@@ -1,10 +1,21 @@
 .catalogContainer {
-  display: flex;
-  column-gap: 64px;
-  margin-top: 48px;
-  padding-bottom: 52px;
+  position: relative;
+
+  @include media(desktop) {
+    display: flex;
+    column-gap: 64px;
+    margin-top: 48px;
+    padding-bottom: 52px;
+  }
 }
 
-.listButtonWrapper {
-  text-align: center;
+.catalogFiltersBtn {
+  margin-bottom: 10px;
+}
+
+.loadMoreBtn {
+  @include media(to-tablet) {
+    padding: 12px 24px;
+    border-radius: 100px;
+  }
 }

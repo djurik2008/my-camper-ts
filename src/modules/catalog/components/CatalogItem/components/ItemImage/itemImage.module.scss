@@ -1,6 +1,16 @@
 .itemImage {
-  width: 292px;
-  height: 320px;
   border-radius: 10px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+
+  @include media(to-tablet) {
+    margin-bottom: 5px;
+  }
+
+  @include media(tablet) {
+    width: 292px;
+    height: 320px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
 }

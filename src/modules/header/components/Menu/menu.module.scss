@@ -1,14 +1,59 @@
+.mobileMenu {
+  width: 100%;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  &.open {
+    pointer-events: auto;
+  }
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
 .navList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 32px;
+  @include media(to-tablet) {
+    background-color: $inputs-color;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom: 1px solid $gray-light-color;
+    transform: translateY(-100px);
+    transition: transform 300ms ease-in-out;
+
+    &.open {
+      transform: translateY(0);
+      transition: transform 300ms ease-in-out;
+    }
+  }
+
+  @include media(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 32px;
+  }
+}
+
+.navListItem:not(:last-child) {
+  @include media(to-tablet) {
+    margin-bottom: 10px;
+  }
 }
 
 .navLink {
-  @include font(16, 24);
+  @include font(18, 26);
   font-weight: 500;
   color: $main-color;
+
+  @include media(tablet) {
+    @include font(16, 24);
+    font-weight: 500;
+  }
 
   &:hover,
   &:focus {

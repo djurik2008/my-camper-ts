@@ -1,0 +1,16 @@
+.burgerBatton {
+  width: 40px;
+  height: 40px;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    fill: $main-color;
+    transform: rotate(0deg);
+    transition: transform 200ms ease;
+  }
+
+  &.isOpen .icon {
+    transform: rotate(90deg);
+  }
+}

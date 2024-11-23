@@ -1,0 +1,25 @@
+.filterBlockName {
+  @include font(16, 24);
+  font-weight: 500;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $gray-light-color;
+
+  @include media(desktop) {
+    @include font(20, 24);
+    font-weight: 600;
+    padding-bottom: 24px;
+  }
+}
+
+.typeOptions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding-top: 14px;
+
+  @include media(desktop) {
+    flex-direction: row;
+    column-gap: 12px;
+    padding-top: 24px;
+  }
+}

@@ -1,37 +1,22 @@
-import clsx from 'clsx';
 import { sprite } from 'shared/svg';
 import s from './equipmentCheckbox.module.scss';
 
 const EquipmentCheckbox = ({ item, value, onChange }) => {
   return (
-    <label className={s.checkboxRadioLabel}>
+    <label className={s.equipmentCheckboxLabel}>
       <input
-        className={s.checkboxRadio}
+        className={s.equipmentCheckbox}
         type="checkbox"
-        value={item === 'transmission' ? 'automatic' : true}
-        checked={item === 'transmission' ? value === 'automatic' : value}
-        onChange={(e) => {
-          onChange(
-            item === 'transmission'
-              ? e.target.checked
-                ? 'automatic'
-                : ''
-              : e.target.checked
-                ? true
-                : ''
-          );
-        }}
+        name="equipment"
+        value={item === 'transmission' ? 'automatic' : 'true'}
+        checked={item === 'transmission' ? value === 'automatic' : !!value}
+        onChange={(e) => onChange(e.target.checked ? e.target.value : '')}
       />
-      <span
-        className={clsx(
-          s.customCheckboxRadio,
-          (value === 'automatic' && s.checked) || (value && s.checked)
-        )}
-      >
-        <svg className={s.checkboxRadioIcon}>
+      <span className={s.customEquipmentCheckbox}>
+        <svg className={s.customEquipmentCheckboxIcon}>
           <use href={sprite + `#${item}`} />
         </svg>
-        <span className={s.checkboxRadioName}>
+        <span className={s.customEquipmentCheckboxName}>
           {item === 'transmission' ? 'automatic' : item}
         </span>
       </span>

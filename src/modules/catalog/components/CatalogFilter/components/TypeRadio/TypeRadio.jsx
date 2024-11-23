@@ -1,27 +1,24 @@
-import clsx from 'clsx';
 import { sprite } from 'shared/svg';
 import s from './typeRadio.module.scss';
 
 const TypeRadio = ({ type, value, onChange }) => {
   return (
-    <label className={s.checkboxRadioLabel}>
+    <label className={s.typeRadioLabel}>
       <input
-        className={s.checkboxRadio}
+        className={s.typeRadio}
         type="radio"
-        name="typeOptions"
+        name="vehicleType"
         value={type}
         checked={value === type}
         onChange={(e) => {
           onChange(e.target.checked ? type : '');
         }}
       />
-      <span
-        className={clsx(s.customCheckboxRadio, value === type && s.checked)}
-      >
-        <svg className={s.checkboxRadioIcon}>
+      <span className={s.customTypeRadio}>
+        <svg className={s.customTypeRadioIcon}>
           <use href={sprite + `#${type}`} />
         </svg>
-        <span className={s.checkboxRadioName}>
+        <span className={s.customTypeRadioName}>
           {type === 'fullyIntegrated' ? 'Fully Integrated' : type}
         </span>
       </span>

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { globalStylesOptions } from './global.styles';
 
 export default defineConfig({
   plugins: [react()],
@@ -20,13 +19,9 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
-        additionalData: globalStylesOptions,
+        additionalData: `@use 'shared/styles/_index.scss' as *;`,
       },
-    },
-    modules: {
-      localsConvention: 'camelCaseOnly',
     },
   },
   base: './',
-  // base: '/my-camper',
 });

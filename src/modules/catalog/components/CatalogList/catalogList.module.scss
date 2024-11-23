@@ -1,7 +1,17 @@
 .catalogList > li:not(:last-child) {
-  margin-bottom: 32px;
+  margin-bottom: 18px;
+  @include media(tablet) {
+    margin-bottom: 32px;
+  }
+}
+
+.catalogList {
+  margin-bottom: 20px;
+  @include media(tablet) {
+    margin-bottom: 40px;
+  }
 }
 
 .catalogListSection {
-  margin-bottom: 40px;
+  text-align: center;
 }

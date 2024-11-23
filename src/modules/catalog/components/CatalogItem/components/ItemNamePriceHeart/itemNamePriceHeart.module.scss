@@ -5,8 +5,20 @@
 }
 
 .itemName {
-  @include font(24, 32);
-  font-weight: 600;
+  @include font(18, 26);
+  font-weight: 500;
+
+  @include media(to-tablet) {
+    max-width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @include media(desktop) {
+    @include font(24, 32);
+    font-weight: 600;
+  }
 }
 
 .priceHeartContainer {
@@ -16,27 +28,44 @@
 }
 
 .itemPrice {
-  @include font(24, 32);
-  font-weight: 600;
+  @include font(18, 26);
+  font-weight: 500;
+
+  @include media(desktop) {
+    @include font(24, 32);
+    font-weight: 600;
+  }
 }
 
-.checkbox {
+.heartCheckbox {
   width: 0;
   height: 0;
   appearance: none;
   position: absolute;
 }
 
-.iconCheckbox {
+.heartCheckboxIcon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 25px;
   height: 24px;
-  fill: $main-color;
+  stroke: $button-color;
+  stroke-width: 2px;
+  fill: $white-color;
   cursor: pointer;
+
+  @include media(tablet) {
+    fill: transparent;
+    stroke: $main-color;
+  }
 }
 
 .checked {
+  stroke: $white-color;
   fill: $button-color;
+
+  @include media(tablet) {
+    stroke: $button-color;
+  }
 }
