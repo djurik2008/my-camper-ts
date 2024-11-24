@@ -19,7 +19,11 @@ const TypeRadio = ({ type, value, onChange }) => {
           <use href={sprite + `#${type}`} />
         </svg>
         <span className={s.customTypeRadioName}>
-          {type === 'fullyIntegrated' ? 'Fully Integrated' : type}
+          {type === 'fullyIntegrated'
+            ? 'Fully Integrated'
+            : type === 'panelTruck'
+              ? 'Panel Truck'
+              : type}
         </span>
       </span>
     </label>

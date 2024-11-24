@@ -6,7 +6,7 @@ const VehicleTypes = ({ control, className = null }) => (
   <div className={className}>
     <p className={s.filterBlockName}>Vehicle type</p>
     <div className={s.typeOptions}>
-      {['van', 'fullyIntegrated', 'alcove'].map((type) => (
+      {['panelTruck', 'fullyIntegrated', 'alcove'].map((type) => (
         <Controller
           key={type}
           name="form"
