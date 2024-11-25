@@ -1,3 +1,7 @@
+.galleryContainer {
+  display: flex;
+}
+
 .galleryList {
   display: flex;
   align-items: center;
@@ -5,8 +9,13 @@
 }
 
 .galleryImg {
-  width: 292px;
-  height: 312px;
-  border-radius: 10px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
+  cursor: pointer;
+}
+
+.accentCamperImg {
+  width: 283px;
+  height: 240px;
 }

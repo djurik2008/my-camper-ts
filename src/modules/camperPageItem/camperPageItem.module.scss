@@ -1,7 +1,19 @@
+.camperPageItemContainer {
+  margin-top: 16px;
+
+  @include media(desktop) {
+    margin-top: 48px;
+  }
+}
+
 .camperName {
   @include font(24, 32);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 8px;
+
+  @include media(desktop) {
+    font-weight: 600;
+  }
 }
 
 .camperRatingLocationBlok {
@@ -10,17 +22,31 @@
 
 .camperPrice {
   @include font(24, 32);
-  font-weight: 600;
-  margin-bottom: 28px;
+  font-weight: 500;
+  margin-bottom: 14px;
+
+  @include media(desktop) {
+    margin-bottom: 28px;
+    font-weight: 600;
+  }
 }
 
 .camperGallery {
-  margin-bottom: 28px;
+  margin-bottom: 14px;
+
+  @include media(desktop) {
+    margin-bottom: 28px;
+  }
 }
 
 .camperDescription {
-  @include font(16, 24);
+  @include font(16, 20);
   font-weight: 400;
   color: $text-color;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+
+  @include media(desktop) {
+    @include font(16, 24);
+    margin-bottom: 50px;
+  }
 }

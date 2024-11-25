@@ -8,17 +8,22 @@ const CamperPageItem = ({ camper }) => {
     camper;
 
   return (
-    <Container>
-      <h2 className={s.camperName}>{name}</h2>
-      <CamperRatingLocation
-        rating={rating}
-        location={location}
-        reviewsCount={reviews.length}
-        className={s.camperRatingLocationBlok}
-      />
-      <p className={s.camperPrice}>€{price.toFixed(2)}</p>
-      <CamperGallery gallery={gallery} className={s.camperGallery} />
-      <p className={s.camperDescription}>{description}</p>
+    <Container className={s.camperPageItemContainer}>
+      <main>
+        <h1 className="visuallyHidden ">
+          Page with information about camper car
+        </h1>
+        <h2 className={s.camperName}>{name}</h2>
+        <CamperRatingLocation
+          rating={rating}
+          location={location}
+          reviewsCount={reviews.length}
+          className={s.camperRatingLocationBlok}
+        />
+        <p className={s.camperPrice}>€{price.toFixed(2)}</p>
+        <CamperGallery gallery={gallery} className={s.camperGallery} />
+        <p className={s.camperDescription}>{description}</p>
+      </main>
       <FeaturesReviewsTabs>
         <BookForm />
       </FeaturesReviewsTabs>
