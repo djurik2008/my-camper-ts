@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import 'react-datepicker/dist/react-datepicker.css';
 import './reactDatePicker.scss';
 import s from './inputDatePicker.module.scss';
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 const InputDatePicker = ({ field, className = null }) => {
   const [startDate, endDate] = field.value;
@@ -26,7 +25,7 @@ const InputDatePicker = ({ field, className = null }) => {
       placeholderText={placeholder}
       onFocus={() => setPlaceholder('Select a date between today')}
       onBlur={() => setPlaceholder('Booking date*')}
-      className={clsx(s.datePicker, className && className)}
+      className={clsx(s.datePicker, className)}
       wrapperClassName={s.wrapper}
       calendarClassName={s.calendar}
     />

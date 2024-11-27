@@ -1,20 +1,36 @@
 .featuresContainer {
-  padding: 44px 52px;
-  width: 631px;
+  @include media(desktop) {
+    padding: 44px 52px;
+    width: 631px;
+  }
 }
 
 .badgeslist {
-  margin-bottom: 100px;
+  margin-bottom: 25px;
+
+  @include media(desktop) {
+    margin-bottom: 100px;
+  }
 }
 
 .detailsTitle {
-  @include font(20, 24);
-  font-weight: 600;
-  margin-bottom: 48px;
+  @include font(18, 20);
+  font-weight: 500;
+  margin-bottom: 24px;
+
+  @include media(desktop) {
+    @include font(20, 24);
+    font-weight: 600;
+    margin-bottom: 48px;
+  }
 }
 
 .detailsItem:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+
+  @include media(desktop) {
+    margin-bottom: 16px;
+  }
 }
 
 .detailsItem {
@@ -25,6 +41,10 @@
 }
 
 .detailsFeatures {
-  @include font(16, 24);
+  @include font(14, 20);
   text-transform: capitalize;
+
+  @include media(desktop) {
+    @include font(16, 24);
+  }
 }

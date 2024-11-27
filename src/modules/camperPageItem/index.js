@@ -4,3 +4,5 @@ export { default as CamperFeatures } from './components/CamperFeatures/CamperFea
 export { default as CamperReviews } from './components/CamperReviews/CamperReviews';
 export { default as FeaturesReviewsTabs } from './components/FeaturesReviewsTabs/FeaturesReviewsTabs';
 export { default as BookForm } from './components/BookForm/BookForm';
+export { default as CamperGalleryMobile } from './components/CamperGalleryMobile/CamperGalleryMobile';
+export { default as BookFormButton } from './components/BookFormButton/BookFormButton';

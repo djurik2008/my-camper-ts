@@ -1,21 +1,36 @@
 .bookformSection {
-  padding: 44px;
-  border: 1px solid $gray-light-color;
-  border-radius: 10px;
-  margin-left: 40px;
+  @include media(desktop) {
+    padding: 44px;
+    border: 1px solid $gray-light-color;
+    border-radius: 10px;
+    margin-left: 40px;
+  }
 }
 
 .formTitle {
-  @include font(20, 24);
-  font-weight: 600;
+  @include font(20, 22);
+  font-weight: 500;
+  text-align: center;
   margin-bottom: 8px;
+
+  @include media(desktop) {
+    @include font(20, 24);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: left;
+  }
 }
 
 .suportingText {
-  @include font(16, 24);
+  @include font(16, 20);
   font-weight: 400;
   color: $gray-color;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+
+  @include media(desktop) {
+    @include font(16, 24);
+    margin-bottom: 24px;
+  }
 }
 
 .bookForm {
@@ -23,20 +38,32 @@
 }
 
 .textInput {
-  @include font(16, 24);
+  @include font(16, 20);
   font-weight: 400;
   width: 100%;
-  height: 60px;
-  padding: 18px;
+  height: 50px;
+  padding: 9px;
   border: none;
-  border-radius: 12px;
-  margin-bottom: 14px;
+  border-radius: 15px;
+  margin-bottom: 10px;
   background-color: $inputs-color;
 
-  &::placeholder {
+  @include media(desktop) {
     @include font(16, 24);
+    height: 60px;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  &::placeholder {
+    @include font(14, 18);
     font-weight: 400;
     color: $gray-color;
+
+    @include media(desktop) {
+      @include font(16, 24);
+    }
   }
 
   &:focus {
@@ -46,21 +73,33 @@
 }
 
 .commentTextarea {
-  @include font(16, 24);
+  @include font(16, 20);
   font-weight: 400;
-  padding: 18px;
+  padding: 9px;
   width: 100%;
-  height: 118px;
+  height: 70px;
   border: none;
-  border-radius: 12px;
-  margin-bottom: 24px;
+  border-radius: 15px;
+  margin-bottom: 12px;
   resize: none;
   background-color: $inputs-color;
 
-  &::placeholder {
+  @include media(desktop) {
     @include font(16, 24);
+    padding: 18px;
+    height: 118px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  &::placeholder {
+    @include font(14, 18);
     font-weight: 400;
     color: $gray-color;
+
+    @include media(desktop) {
+      @include font(16, 24);
+    }
   }
 
   &:focus {

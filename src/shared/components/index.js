@@ -7,3 +7,4 @@ export { default as LoadMoreButton } from './LoadMoreButton/LoadMoreButton';
 export { default as CamperRatingLocation } from './CamperRatingLocation/CamperRatingLocation';
 export { default as SubmitButton } from './SubmitButton/SubmitButton';
 export { default as Loader } from './Loader/Loader';
+export { default as Modal } from './Modal/Modal';

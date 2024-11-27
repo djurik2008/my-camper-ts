@@ -1,13 +1,21 @@
 .reviewerBadge {
-  @include font(24, 32);
-  font-weight: 600;
+  @include font(20, 28);
+  font-weight: 500;
   color: $button-color;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: $badges-color;
+
+  @include media(desktop) {
+    @include font(24, 32);
+    font-weight: 600;
+
+    width: 60px;
+    height: 60px;
+  }
 }

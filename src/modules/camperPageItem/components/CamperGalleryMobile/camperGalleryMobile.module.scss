@@ -1,0 +1,15 @@
+.galleryContainer {
+  display: flex;
+}
+
+.galleryThumbImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.accentCamperImg {
+  width: 283px;
+  height: 240px;
+}

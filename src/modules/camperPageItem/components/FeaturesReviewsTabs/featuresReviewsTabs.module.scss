@@ -1,16 +1,27 @@
 .tabsList {
   display: flex;
   align-items: center;
-  column-gap: 40px;
-  padding-bottom: 24px;
-  margin-bottom: 50px;
+  column-gap: 30px;
+  padding-bottom: 11px;
+  margin-bottom: 25px;
   border-bottom: 1px solid $gray-light-color;
+
+  @include media(desktop) {
+    column-gap: 40px;
+    padding-bottom: 24px;
+    margin-bottom: 50px;
+  }
 }
 
 .tabName {
-  @include font(20, 24);
-  font-weight: 600;
+  @include font(16, 20);
+  font-weight: 500;
   cursor: pointer;
+
+  @include media(desktop) {
+    @include font(20, 24);
+    font-weight: 600;
+  }
 }
 
 .tabActive {
@@ -18,15 +29,23 @@
 
   &::after {
     content: '';
-    border-bottom: 5px solid $button-color;
-    border-radius: 3px;
+    border-bottom: 3px solid $button-color;
+    border-radius: 2px;
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: -26px;
+    bottom: -13px;
+
+    @include media(desktop) {
+      border-bottom: 5px solid $button-color;
+      border-radius: 3px;
+      bottom: -26px;
+    }
   }
 }
 
 .tabsChildrenWrapper {
-  display: flex;
+  @include media(desktop) {
+    display: flex;
+  }
 }

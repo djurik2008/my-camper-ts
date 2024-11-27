@@ -3,7 +3,7 @@ import { InputDatePicker } from './components';
 import { SubmitButton } from 'shared/components';
 import s from './bookForm.module.scss';
 
-const BookForm = () => {
+const BookForm = ({ closeModal, isOpen }) => {
   const initialValues = {
     name: '',
     email: '',
@@ -30,6 +30,7 @@ const BookForm = () => {
       Dates: ${formattedDate[0]} - ${formattedDate[1]}`
     );
     reset();
+    isOpen && closeModal();
   };
 
   return (

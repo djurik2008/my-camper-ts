@@ -1,0 +1,10 @@
+.bookFormButton {
+  @include font(16, 24);
+  text-align: center;
+
+  width: 100%;
+  height: 48px;
+  border: 1px solid $gray-light-color;
+  border-radius: 100px;
+  margin-bottom: 25px;
+}

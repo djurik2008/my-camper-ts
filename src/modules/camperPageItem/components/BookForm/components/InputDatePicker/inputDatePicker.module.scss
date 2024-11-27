@@ -4,13 +4,30 @@
 }
 
 .datePicker {
-  @include font(16, 24);
+  @include font(16, 20);
   font-weight: 400;
   width: 100%;
-  padding: 18px;
+  padding: 9px;
+  height: 50px;
   border: none;
-  border-radius: 12px;
-  border-color: $inputs-color;
+  border-radius: 15px;
+  background-color: $inputs-color;
+
+  @include media(desktop) {
+    @include font(16, 24);
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  &::placeholder {
+    @include font(14, 18);
+    font-weight: 400;
+    color: $gray-color;
+
+    @include media(desktop) {
+      @include font(16, 24);
+    }
+  }
 
   &:focus {
     outline: none;

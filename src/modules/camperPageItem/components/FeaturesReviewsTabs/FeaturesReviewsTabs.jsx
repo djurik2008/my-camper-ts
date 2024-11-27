@@ -31,7 +31,7 @@ const FeaturesReviewsTabs = ({ children }) => {
         <TabPanel>
           <CamperReviews />
         </TabPanel>
-        {children}
+        {children && children}
       </div>
     </Tabs>
   );

@@ -1,0 +1,40 @@
+.modalOverlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transform: scale(0);
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 8px;
+
+  transition: scale 250ms ease-in-out;
+
+  &.open {
+    display: flex;
+    transform: scale(100%);
+    transition: scale 250ms ease-in-out;
+  }
+}
+
+.modalContent {
+  width: 343px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background-color: $white-color;
+}
+
+.closeText {
+  @include font(16, 20);
+  color: $badges-color;
+  pointer-events: none;
+}

@@ -6,6 +6,14 @@
   }
 }
 
+.camperPageItemMain {
+  margin-bottom: 25px;
+
+  @include media(desktop) {
+    margin-bottom: 50px;
+  }
+}
+
 .camperName {
   @include font(24, 32);
   font-weight: 500;
@@ -43,7 +51,6 @@
   @include font(16, 20);
   font-weight: 400;
   color: $text-color;
-  margin-bottom: 25px;
 
   @include media(desktop) {
     @include font(16, 24);

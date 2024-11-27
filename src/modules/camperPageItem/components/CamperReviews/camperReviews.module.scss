@@ -1,24 +1,43 @@
 .reviewsList {
-  width: 631px;
+  @include media(desktop) {
+    width: 631px;
+  }
 }
 
 .reviewsItem:not(:last-child) {
-  margin-bottom: 44px;
+  margin-bottom: 18px;
+
+  @include media(desktop) {
+    margin-bottom: 44px;
+  }
 }
 
 .badgeNameRatingContainer {
   display: flex;
-  column-gap: 16px;
-  margin-bottom: 16px;
+  column-gap: 10px;
+  margin-bottom: 10px;
+
+  @include media(desktop) {
+    column-gap: 16px;
+    margin-bottom: 16px;
+  }
 }
 
 .reviewName {
-  @include font(16, 24);
+  @include font(16, 20);
   margin-bottom: 4px;
+
+  @include media(desktop) {
+    @include font(16, 24);
+  }
 }
 
 .reviewComment {
-  @include font(16, 24);
+  @include font(16, 20);
   font-weight: 400;
   color: $text-color;
+
+  @include media(desktop) {
+    @include font(16, 24);
+  }
 }
