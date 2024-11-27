@@ -30,9 +30,8 @@ const Modal = ({ children, onClose, isOpen }) => {
       className={clsx(s.modalOverlay, isOpen && s.open)}
       onClick={closeModal}
     >
-      <span className={s.closeText}>&#8855; Close &#8855;</span>
+      <span className={s.closeText}>Touch to close &#8855;</span>
       <div className={s.modalContent}>{children}</div>
-      <span className={s.closeText}>&#8855; Close &#8855;</span>
     </div>,
     modalRoot
   );
