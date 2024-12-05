@@ -16,6 +16,7 @@
 .tabName {
   @include font(16, 20);
   font-weight: 500;
+  user-select: none;
   cursor: pointer;
 
   @include media(desktop) {

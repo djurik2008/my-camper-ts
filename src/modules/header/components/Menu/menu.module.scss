@@ -49,6 +49,7 @@
   @include font(18, 26);
   font-weight: 500;
   color: $main-color;
+  user-select: none;
 
   @include media(tablet) {
     @include font(16, 24);
