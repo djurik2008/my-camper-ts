@@ -8,3 +8,4 @@ export { default as CamperRatingLocation } from './CamperRatingLocation/CamperRa
 export { default as SubmitButton } from './SubmitButton/SubmitButton';
 export { default as Loader } from './Loader/Loader';
 export { default as Modal } from './Modal/Modal';
+export { default as ProgressBar } from './ProgressBar/ProgressBar';

@@ -44,7 +44,8 @@ h2.react-datepicker__current-month {
   font-weight: 400;
 
   width: 36px;
-  height: 32px;
+  height: 36px;
+  border-radius: 50%;
   margin: 0;
 
   display: inline-flex;
@@ -57,6 +58,7 @@ h2.react-datepicker__current-month {
 .react-datepicker__quarter-text:not([aria-disabled='true']):hover,
 .react-datepicker__year-text:not([aria-disabled='true']):hover {
   background-color: $gray-light-color;
+  border-radius: 50%;
 }
 
 .react-datepicker__day--keyboard-selected:not([aria-disabled='true']):hover,
@@ -70,6 +72,7 @@ h2.react-datepicker__current-month {
     [aria-disabled='true']
   ):hover {
   background-color: rgb(28.75, 93.2196969697, 143.75);
+  border-radius: 50%;
 }
 
 .react-datepicker__day--keyboard-selected:hover,
@@ -79,4 +82,17 @@ h2.react-datepicker__current-month {
 .react-datepicker__day--today:hover,
 .react-datepicker__day--today:focus {
   color: $white-color;
+}
+
+.react-datepicker__close-icon {
+  padding: 0 9px 0 0;
+
+  @include media(desktop) {
+    padding: 0 18px 0 0;
+  }
+}
+
+.react-datepicker__close-icon::after {
+  width: 20px;
+  height: 20px;
 }

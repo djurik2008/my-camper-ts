@@ -18,6 +18,11 @@
   @include media(desktop) {
     @include font(24, 32);
     font-weight: 600;
+
+    max-width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -48,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
+  width: 26px;
   height: 24px;
   stroke: $button-color;
   stroke-width: 2px;
@@ -66,6 +71,7 @@
   fill: $button-color;
 
   @include media(tablet) {
+    fill: $white-color;
     stroke: $button-color;
   }
 }

@@ -1,0 +1,45 @@
+.customInput {
+  width: 100%;
+  border-radius: 15px;
+  background-color: $inputs-color;
+
+  label {
+    width: 100%;
+    padding: 9px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  @include media(desktop) {
+    border-radius: 12px;
+
+    label {
+      padding: 18px;
+    }
+  }
+}
+
+.placeholder {
+  @include font(14, 18);
+  font-weight: 400;
+  color: $gray-color;
+  text-align: left;
+
+  @include media(desktop) {
+    @include font(16, 24);
+  }
+}
+
+.value {
+  @include font(16, 20);
+  font-weight: 400;
+  text-align: left;
+
+  @include media(desktop) {
+    @include font(16, 24);
+  }
+}

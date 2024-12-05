@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import clsx from 'clsx';
+import { CustomDatePickerInput } from '..';
 import 'react-datepicker/dist/react-datepicker.css';
-import './reactDatePicker.scss';
+import './customDatePicker.scss';
 import s from './inputDatePicker.module.scss';
 
 const InputDatePicker = ({ field, className = null }) => {
   const [startDate, endDate] = field.value;
-  const [placeholder, setPlaceholder] = useState('Booking date*');
 
   return (
     <DatePicker
@@ -22,12 +21,10 @@ const InputDatePicker = ({ field, className = null }) => {
         field.onChange(update);
       }}
       isClearable={true}
-      placeholderText={placeholder}
-      onFocus={() => setPlaceholder('Select a date between today')}
-      onBlur={() => setPlaceholder('Booking date*')}
       className={clsx(s.datePicker, className)}
       wrapperClassName={s.wrapper}
       calendarClassName={s.calendar}
+      customInput={<CustomDatePickerInput />}
     />
   );
 };
