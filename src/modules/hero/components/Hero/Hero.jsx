@@ -9,7 +9,11 @@ const Hero = () => {
     <section className={s.heroSection}>
       <Container>
         <HeroTitle className={s.heroTitle} />
-        <LinkButton text={'View Now'} linkTo={ROUTES.CATALOG} />
+        <LinkButton
+          text={'View Now'}
+          linkTo={ROUTES.CATALOG}
+          className={s.viewNowBtn}
+        />
       </Container>
     </section>
   );

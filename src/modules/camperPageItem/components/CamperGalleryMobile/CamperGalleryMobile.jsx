@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { noPicture } from 'shared/images';
 import s from './camperGalleryMobile.module.scss';
 
 const CamperGalleryMobile = ({ gallery, className = null }) => {
@@ -24,7 +25,6 @@ const CamperGalleryMobile = ({ gallery, className = null }) => {
     };
 
     img.onerror = () => {
-      console.error('Failed to load image');
       setIsLoading(false);
     };
   };
@@ -38,9 +38,14 @@ const CamperGalleryMobile = ({ gallery, className = null }) => {
               src={img.thumb}
               alt={`camper image ${idx + 1}`}
               className={s.galleryThumbImg}
-              width={'292'}
-              loading={'lazy'}
+              width="292"
+              loading="lazy"
               onClick={() => handleImageClick(img.original)}
+              onError={(e) => {
+                e.target.src = noPicture;
+                e.target.alt =
+                  'Oops, something went wrong. Image not available';
+              }}
             />
           </li>
         ))}
@@ -53,6 +58,10 @@ const CamperGalleryMobile = ({ gallery, className = null }) => {
           alt="Enlarged image of camper"
           className={s.accentCamperImg}
           loading="lazy"
+          onError={(e) => {
+            e.target.src = noPicture;
+            e.target.alt = 'Oops, something went wrong. Image not available';
+          }}
         />
       )}
     </div>

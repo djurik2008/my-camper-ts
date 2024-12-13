@@ -36,8 +36,14 @@ body {
     --header-content-height: 20px;
   }
 
+  @include media(desktop-s) {
+    --header-padding: 22px;
+    --header-content-height: 19px;
+  }
+
   @include media(desktop) {
-    --header-padding: 24px;
+    --header-padding: 26px;
+    --header-content-height: 20px;
   }
 }
 

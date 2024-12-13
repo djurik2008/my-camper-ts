@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialFilter = {
+export const initialFilter = {
   location: '',
   AC: '',
   transmission: '',

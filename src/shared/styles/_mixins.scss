@@ -20,6 +20,14 @@ screen types:
     @media screen and (min-width: bp.$tablet) {
       @content;
     }
+  } @else if $_screen == to-desktop-s {
+    @media screen and (max-width: bp.$to-desktop-s) {
+      @content;
+    }
+  } @else if $_screen == desktop-s {
+    @media screen and (min-width: bp.$desktop-s) {
+      @content;
+    }
   } @else if $_screen == to-desktop {
     @media screen and (max-width: bp.$to-desktop) {
       @content;

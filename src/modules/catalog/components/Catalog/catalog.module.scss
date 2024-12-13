@@ -1,9 +1,15 @@
 .catalogContainer {
   position: relative;
+  padding-bottom: 26px;
+
+  @include media(desktop-s) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-bottom: 36px;
+  }
 
   @include media(desktop) {
-    display: flex;
-    column-gap: 64px;
     margin-top: 48px;
     padding-bottom: 52px;
   }
@@ -12,11 +18,4 @@
 .catalogFiltersBtn {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.loadMoreBtn {
-  @include media(to-tablet) {
-    padding: 12px 24px;
-    border-radius: 100px;
-  }
 }

@@ -7,18 +7,18 @@
 
 .customTypeRadio {
   display: flex;
+  align-items: center;
   column-gap: 8px;
 
-  @include media(desktop) {
-    width: 112px;
-    height: 96px;
+  @include media(desktop-s) {
+    width: 96px;
+    min-height: 80px;
     border: 1px solid $gray-light-color;
     border-radius: 12px;
     flex-direction: column;
     flex-wrap: wrap;
     row-gap: 8px;
     column-gap: 0;
-    align-items: center;
     justify-content: center;
     text-align: center;
 
@@ -28,26 +28,42 @@
       border-color: $button-color;
     }
   }
+
+  @include media(desktop) {
+    width: 112px;
+    height: 96px;
+  }
 }
 
 .customTypeRadioIcon {
-  @include media(to-tablet) {
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    border: 1px solid $gray-light-color;
-    border-radius: 5px;
-    fill: $main-color;
+  width: 25px;
+  height: 25px;
+  fill: $main-color;
+  padding: 4px;
+  border: 1px solid $gray-light-color;
+  border-radius: 5px;
 
+  @include media(tablet) {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+  }
+
+  @include media(to-desktop-s) {
     .typeRadio:checked + .customTypeRadio & {
       border-color: $button-color;
     }
   }
 
+  @include media(desktop-s) {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  }
+
   @include media(desktop) {
     width: 33px;
     height: 33px;
-    fill: $main-color;
   }
 }
 
@@ -55,8 +71,9 @@
   @include font(16, 24);
   font-weight: 400;
   text-transform: capitalize;
+  user-select: none;
 
-  @include media(desktop) {
+  @include media(desktop-s) {
     font-weight: 500;
   }
 }

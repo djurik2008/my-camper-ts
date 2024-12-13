@@ -1,8 +1,11 @@
 import { Puff, ThreeDots } from 'react-loader-spinner';
+import { useThreeDotsLoaderProps } from 'hooks/useThreeDotsProps';
 import s from './loader.module.scss';
 
-const Loader = ({ type }) =>
-  type === 'page' ? (
+const Loader = ({ type }) => {
+  const threeDotsProps = useThreeDotsLoaderProps();
+
+  return type === 'page' ? (
     <Puff
       visible={true}
       color="#E44848"
@@ -12,14 +15,8 @@ const Loader = ({ type }) =>
       wrapperClass={s.pageLoader}
     />
   ) : type === 'button' ? (
-    <ThreeDots
-      visible={true}
-      height="20"
-      width="100"
-      color="#E44848"
-      radius="3"
-      ariaLabel="three-dots-loading"
-    />
+    <ThreeDots {...threeDotsProps} />
   ) : null;
+};
 
 export default Loader;

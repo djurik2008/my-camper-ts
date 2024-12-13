@@ -23,6 +23,14 @@
       );
   }
 
+  @include media(desktop-s) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      image-set(
+        url('./images/hero-bg-d-s@1x.webp') 1x,
+        url('./images/hero-bg-d-s@2x.webp') 2x
+      );
+  }
+
   @include media(desktop) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       image-set(
@@ -34,4 +42,18 @@
 
 .heroTitle {
   margin-bottom: 40px;
+}
+
+.viewNowBtn {
+  @include media(desktop-s) {
+    width: 150px;
+    height: 50px;
+    border-radius: 150px;
+  }
+
+  @include media(desktop) {
+    width: 173px;
+    height: 56px;
+    border-radius: 200px;
+  }
 }

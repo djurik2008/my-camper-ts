@@ -1,8 +1,13 @@
 .bookformSection {
-  @include media(desktop) {
-    padding: 44px;
+  @include media(desktop-s) {
+    padding: 32px;
     border: 1px solid $gray-light-color;
     border-radius: 10px;
+    margin-left: 30px;
+  }
+
+  @include media(desktop) {
+    padding: 44px;
     margin-left: 40px;
   }
 }
@@ -13,7 +18,11 @@
   text-align: center;
   margin-bottom: 8px;
 
-  @include media(desktop) {
+  @include media(tablet) {
+    margin-bottom: 12px;
+  }
+
+  @include media(desktop-s) {
     @include font(20, 24);
     font-weight: 600;
     margin-bottom: 8px;
@@ -27,14 +36,10 @@
   color: $gray-color;
   margin-bottom: 12px;
 
-  @include media(desktop) {
+  @include media(desktop-s) {
     @include font(16, 24);
     margin-bottom: 24px;
   }
-}
-
-.bookForm {
-  text-align: center;
 }
 
 .textInput {
@@ -48,11 +53,18 @@
   margin-bottom: 10px;
   background-color: $inputs-color;
 
+  @include media(tablet) {
+    @include font(16, 22);
+    height: 55px;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
   @include media(desktop) {
     @include font(16, 24);
     height: 60px;
     padding: 18px;
-    border-radius: 12px;
     margin-bottom: 14px;
   }
 
@@ -60,6 +72,10 @@
     @include font(14, 18);
     font-weight: 400;
     color: $gray-color;
+
+    @include media(tablet) {
+      @include font(16, 22);
+    }
 
     @include media(desktop) {
       @include font(16, 24);
@@ -84,18 +100,28 @@
   resize: none;
   background-color: $inputs-color;
 
+  @include media(tablet) {
+    @include font(16, 22);
+    padding: 14px;
+    height: 90px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
   @include media(desktop) {
     @include font(16, 24);
     padding: 18px;
     height: 118px;
-    border-radius: 12px;
-    margin-bottom: 24px;
   }
 
   &::placeholder {
     @include font(14, 18);
     font-weight: 400;
     color: $gray-color;
+
+    @include media(tablet) {
+      @include font(16, 22);
+    }
 
     @include media(desktop) {
       @include font(16, 24);
@@ -105,5 +131,22 @@
   &:focus {
     outline: none;
     border: 1px solid $button-color;
+  }
+}
+
+.formSubBtn {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media(desktop-s) {
+    width: 150px;
+    height: 50px;
+    border-radius: 150px;
+  }
+
+  @include media(desktop) {
+    width: 166px;
+    height: 56px;
+    border-radius: 200px;
   }
 }

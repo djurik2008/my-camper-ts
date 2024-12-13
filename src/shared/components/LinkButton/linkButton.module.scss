@@ -1,17 +1,16 @@
 .linkButton {
+  @include font(16, 24);
+  color: $white-color;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 173px;
-  height: 56px;
-  border-radius: 200px;
+  width: 130px;
+  height: 45px;
+  border-radius: 100px;
   background-color: $button-color;
 
   &:hover,
   &:focus {
     background-color: $button-hover-color;
   }
-
-  @include font(16, 24);
-  color: $white-color;
 }

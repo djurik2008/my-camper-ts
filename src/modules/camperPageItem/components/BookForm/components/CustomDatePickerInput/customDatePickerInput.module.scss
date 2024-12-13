@@ -14,9 +14,15 @@
     cursor: pointer;
   }
 
-  @include media(desktop) {
+  @include media(desktop-s) {
     border-radius: 12px;
 
+    label {
+      padding: 14px;
+    }
+  }
+
+  @include media(desktop) {
     label {
       padding: 18px;
     }
@@ -29,6 +35,10 @@
   color: $gray-color;
   text-align: left;
 
+  @include media(tablet) {
+    @include font(16, 22);
+  }
+
   @include media(desktop) {
     @include font(16, 24);
   }
@@ -38,6 +48,10 @@
   @include font(16, 20);
   font-weight: 400;
   text-align: left;
+
+  @include media(tablet) {
+    @include font(16, 22);
+  }
 
   @include media(desktop) {
     @include font(16, 24);

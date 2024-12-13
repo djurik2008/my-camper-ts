@@ -5,8 +5,13 @@
 }
 
 .galleryImg {
-  width: 292px;
-  height: 312px;
+  width: 270px;
+  height: 280px;
   border-radius: 10px;
   object-fit: cover;
+
+  @include media(desktop) {
+    width: 292px;
+    height: 312px;
+  }
 }

@@ -44,7 +44,11 @@
 
   position: absolute;
   left: 20px;
-  top: 43px;
+  top: 37px;
+
+  @include media(desktop) {
+    top: 41px;
+  }
 
   .cityInput:focus ~ & {
     fill: $main-color;

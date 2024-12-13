@@ -48,10 +48,7 @@ const Catalog = () => {
             ref={filtersBtnRef}
           />
         )}
-        <CatalogFilter
-          className={isMobile && s.mobileFilterSection}
-          {...responsiveFilterProps}
-        />
+        <CatalogFilter {...responsiveFilterProps} />
         <CatalogList>
           {page < totalPages && (
             <LoadMoreButton

@@ -2,6 +2,11 @@
   margin-top: 16px;
   padding-bottom: 16px;
 
+  @include media(tablet) {
+    margin-top: 26px;
+    padding-bottom: 26px;
+  }
+
   @include media(desktop) {
     margin-top: 48px;
     padding-bottom: 80px;
@@ -10,6 +15,10 @@
 
 .camperPageItemMain {
   margin-bottom: 25px;
+
+  @include media(desktop-s) {
+    margin-bottom: 35px;
+  }
 
   @include media(desktop) {
     margin-bottom: 50px;
@@ -35,6 +44,10 @@
   font-weight: 500;
   margin-bottom: 14px;
 
+  @include media(desktop-s) {
+    margin-bottom: 24px;
+  }
+
   @include media(desktop) {
     margin-bottom: 28px;
     font-weight: 600;
@@ -43,6 +56,10 @@
 
 .camperGallery {
   margin-bottom: 14px;
+
+  @include media(desktop-s) {
+    margin-bottom: 24px;
+  }
 
   @include media(desktop) {
     margin-bottom: 28px;

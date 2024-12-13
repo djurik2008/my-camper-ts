@@ -76,7 +76,7 @@ const BookForm = ({ closeModal, isOpen }) => {
           className={s.commentTextarea}
           placeholder="Comment"
         ></textarea>
-        <SubmitButton text={'Send'} />
+        <SubmitButton text={'Send'} className={s.formSubBtn} />
       </form>
     </section>
   );

@@ -8,9 +8,19 @@
   }
 
   @include media(tablet) {
-    width: 292px;
-    height: 320px;
+    width: 250px;
+    height: 250px;
     border-radius: 15px;
     object-fit: cover;
+  }
+
+  @include media(desktop-s) {
+    width: 272px;
+    height: 300px;
+  }
+
+  @include media(desktop) {
+    width: 292px;
+    height: 320px;
   }
 }

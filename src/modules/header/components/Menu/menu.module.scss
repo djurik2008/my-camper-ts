@@ -53,7 +53,6 @@
 
   @include media(tablet) {
     @include font(16, 24);
-    font-weight: 500;
   }
 
   &:hover,

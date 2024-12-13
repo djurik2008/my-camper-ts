@@ -6,6 +6,11 @@
   margin-bottom: 25px;
   border-bottom: 1px solid $gray-light-color;
 
+  @include media(desktop-s) {
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+  }
+
   @include media(desktop) {
     column-gap: 40px;
     padding-bottom: 24px;
@@ -18,6 +23,11 @@
   font-weight: 500;
   user-select: none;
   cursor: pointer;
+
+  @include media(desktop-s) {
+    @include font(18, 22);
+    font-weight: 600;
+  }
 
   @include media(desktop) {
     @include font(20, 24);
@@ -37,6 +47,12 @@
     left: 0;
     bottom: -13px;
 
+    @include media(desktop-s) {
+      border-bottom: 4px solid $button-color;
+      border-radius: 3px;
+      bottom: -20px;
+    }
+
     @include media(desktop) {
       border-bottom: 5px solid $button-color;
       border-radius: 3px;
@@ -46,7 +62,7 @@
 }
 
 .tabsChildrenWrapper {
-  @include media(desktop) {
+  @include media(desktop-s) {
     display: flex;
   }
 }

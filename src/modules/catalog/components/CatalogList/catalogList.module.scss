@@ -1,5 +1,6 @@
 .catalogList > li:not(:last-child) {
   margin-bottom: 18px;
+
   @include media(tablet) {
     margin-bottom: 32px;
   }
@@ -7,11 +8,20 @@
 
 .catalogList {
   margin-bottom: 20px;
+
   @include media(tablet) {
     margin-bottom: 40px;
   }
 }
 
 .catalogListSection {
-  text-align: center;
+  width: 100%;
+
+  @include media(desktop-s) {
+    width: calc($desktop-s * 0.6166);
+  }
+
+  @include media(desktop) {
+    width: calc($desktop * 0.6166);
+  }
 }

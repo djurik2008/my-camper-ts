@@ -4,15 +4,21 @@
 
   @include media(mobile) {
     width: $mobile;
+    padding: 0 calc($mobile * 0.0444);
   }
 
   @include media(tablet) {
     width: $tablet;
-    padding: 0 32px;
+    padding: 0 calc($tablet * 0.0444);
+  }
+
+  @include media(desktop-s) {
+    width: $desktop-s;
+    padding: 0 calc($desktop-s * 0.0444);
   }
 
   @include media(desktop) {
     width: $desktop;
-    padding: 0 64px;
+    padding: 0 calc($desktop * 0.0444);
   }
 }

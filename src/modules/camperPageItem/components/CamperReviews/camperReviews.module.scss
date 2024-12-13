@@ -1,4 +1,8 @@
 .reviewsList {
+  @include media(desktop-s) {
+    width: 593px;
+  }
+
   @include media(desktop) {
     width: 631px;
   }
@@ -6,6 +10,10 @@
 
 .reviewsItem:not(:last-child) {
   margin-bottom: 18px;
+
+  @include media(desktop-s) {
+    margin-bottom: 32px;
+  }
 
   @include media(desktop) {
     margin-bottom: 44px;

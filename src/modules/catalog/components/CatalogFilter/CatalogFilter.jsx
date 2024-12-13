@@ -2,9 +2,11 @@ import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef } from 'react';
-import { setFilter } from '@redux/filter/filterSlice';
+import isEqual from 'lodash/isEqual';
+import { setFilter, clearFilter } from '@redux/filter/filterSlice';
 import { selectFilter } from '@redux/filter/filterSelectors';
 import { clearCampers } from '@redux/campers/campersSlice';
+import { initialFilter } from '@redux/filter/filterSlice';
 import { useOutsideClickWithButton } from 'hooks/useOutsideClickWithButton';
 import { LocationFilter, VehicleEquipments, VehicleTypes } from './components';
 import { SubmitButton } from 'shared/components';
@@ -19,7 +21,7 @@ const CatalogFilter = ({
   const filter = useSelector(selectFilter);
   const filterSectionRef = useRef(null);
 
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: filter,
   });
 
@@ -29,6 +31,18 @@ const CatalogFilter = ({
     dispatch(clearCampers());
     dispatch(setFilter(data));
     if (onClose) onClose();
+  };
+
+  const onReset = () => {
+    const isFilterChanged = !isEqual(filter, initialFilter);
+
+    if (!isFilterChanged) {
+      reset(filter);
+    } else {
+      dispatch(clearFilter());
+      dispatch(clearCampers());
+      reset(initialFilter);
+    }
   };
 
   useOutsideClickWithButton(filterSectionRef, filtersBtnRef, isOpen, onClose);
@@ -50,7 +64,12 @@ const CatalogFilter = ({
 
         <VehicleTypes control={control} className={s.vehicleTypes} />
 
-        <SubmitButton text={'Search'} className={s.responsiveSubBtn} />
+        <div className={s.formBtnsWrapper}>
+          <SubmitButton text={'Search'} className={s.responsiveSubBtn} />
+          <button type="button" className={s.resetFilterBtn} onClick={onReset}>
+            Reset filter
+          </button>
+        </div>
       </form>
     </section>
   );

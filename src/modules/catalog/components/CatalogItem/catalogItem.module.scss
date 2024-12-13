@@ -8,10 +8,22 @@
 
   @include media(tablet) {
     flex-direction: row;
+    column-gap: 15px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  @include media(desktop-s) {
+    flex-direction: row;
+    column-gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  @include media(desktop) {
     column-gap: 24px;
     padding: 24px;
     border-radius: 20px;
-    position: static;
   }
 }
 
@@ -22,7 +34,7 @@
   justify-content: space-between;
 
   @include media(tablet) {
-    row-gap: 24px;
+    row-gap: 0;
   }
 }
 
@@ -43,15 +55,32 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 524px;
+  max-width: 400px;
+
+  @include media(desktop-s) {
+    max-width: 450px;
+  }
+
+  @include media(desktop) {
+    max-width: 524px;
+  }
 }
 
 .showMoreBtn {
   @include media(to-tablet) {
     margin-left: auto;
     margin-right: auto;
-    width: 130px;
-    height: 45px;
-    border-radius: 100px;
+  }
+
+  @include media(desktop-s) {
+    width: 150px;
+    height: 50px;
+    border-radius: 150px;
+  }
+
+  @include media(desktop) {
+    width: 166px;
+    height: 56px;
+    border-radius: 200px;
   }
 }

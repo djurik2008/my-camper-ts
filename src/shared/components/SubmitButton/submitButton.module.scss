@@ -1,8 +1,12 @@
 .submitButton {
   @include font(16, 24);
   color: $white-color;
-  padding: 16px 56.5px;
-  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 45px;
+  border-radius: 100px;
   background-color: $button-color;
 
   &:hover,

@@ -14,7 +14,7 @@ import s from './camperPageItem.module.scss';
 const CamperPageItem = ({ camper }) => {
   const { name, price, rating, location, description, reviews, gallery } =
     camper;
-  const { isMobile } = useMedia();
+  const { isMobile, isTablet } = useMedia();
 
   const [isModalFormOpen, setIsModalFormOpen] = useState(false);
 
@@ -34,14 +34,14 @@ const CamperPageItem = ({ camper }) => {
           className={s.camperRatingLocationBlok}
         />
         <p className={s.camperPrice}>€{price.toFixed(2)}</p>
-        {isMobile ? (
+        {isMobile || isTablet ? (
           <CamperGalleryMobile gallery={gallery} className={s.camperGallery} />
         ) : (
           <CamperGallery gallery={gallery} className={s.camperGallery} />
         )}
         <p className={s.camperDescription}>{description}</p>
       </main>
-      {isMobile ? (
+      {isMobile || isTablet ? (
         <>
           <BookFormButton onClick={toggleModal} />
           <FeaturesReviewsTabs />
