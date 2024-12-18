@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import { noPicture } from 'shared/images';
+import { GalleryThumbImg } from './components';
+import { GalleryAccentImg } from './components';
 import s from './camperGalleryMobile.module.scss';
 
 const CamperGalleryMobile = ({ gallery, className = null }) => {
@@ -29,41 +30,33 @@ const CamperGalleryMobile = ({ gallery, className = null }) => {
     };
   };
 
+  const [loaded, setLoaded] = useState(
+    Array(extendedGallery.length).fill(false)
+  );
+
+  const handleImageLoad = (idx) => {
+    setLoaded((prev) => {
+      const updated = [...prev];
+      updated[idx] = true;
+      return updated;
+    });
+  };
+
   return (
     <div className={clsx(s.galleryContainer, className)}>
       <ul className={s.galleryThumbsList}>
         {extendedGallery.map((img, idx) => (
-          <li key={idx} className={s.galleryItem}>
-            <img
-              src={img.thumb}
-              alt={`camper image ${idx + 1}`}
-              className={s.galleryThumbImg}
-              width="292"
-              loading="lazy"
-              onClick={() => handleImageClick(img.original)}
-              onError={(e) => {
-                e.target.src = noPicture;
-                e.target.alt =
-                  'Oops, something went wrong. Image not available';
-              }}
-            />
-          </li>
+          <GalleryThumbImg
+            key={idx}
+            idx={idx}
+            img={img}
+            loaded={loaded}
+            onImageLoad={handleImageLoad}
+            onClick={handleImageClick}
+          />
         ))}
       </ul>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <img
-          src={accentImg}
-          alt="Enlarged image of camper"
-          className={s.accentCamperImg}
-          loading="lazy"
-          onError={(e) => {
-            e.target.src = noPicture;
-            e.target.alt = 'Oops, something went wrong. Image not available';
-          }}
-        />
-      )}
+      <GalleryAccentImg accentImgSrc={accentImg} isLoading={isLoading} />
     </div>
   );
 };

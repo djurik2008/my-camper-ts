@@ -5,6 +5,7 @@ import { getCamperById } from '@redux/camper/camperOperations';
 import { selectCamper } from '@redux/camper/camperSelectors';
 import { resetCamper } from '@redux/camper/camperSlice';
 import { CamperPageItem } from 'modules/camperPageItem';
+import { useDoneProgressBar } from 'hooks/useDoneProgressBar';
 
 const CamperPage = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const CamperPage = () => {
 
     return () => dispatch(resetCamper());
   }, [dispatch, camperId]);
+
+  useDoneProgressBar();
 
   return camper && <CamperPageItem camper={camper} />;
 };

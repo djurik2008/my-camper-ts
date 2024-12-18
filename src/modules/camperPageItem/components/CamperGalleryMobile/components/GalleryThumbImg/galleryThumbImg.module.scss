@@ -1,0 +1,18 @@
+.galleryThumbImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+
+  @include media(tablet) {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

@@ -9,3 +9,5 @@ export { default as SubmitButton } from './SubmitButton/SubmitButton';
 export { default as Loader } from './Loader/Loader';
 export { default as Modal } from './Modal/Modal';
 export { default as ProgressBar } from './ProgressBar/ProgressBar';
+export { default as GalleryMobileImageSkelleton } from './Skelletons/CamperGalleryMobileSkelleton/GalleryMobileImageSkelleton';
+export { default as GalleryImageSkelleton } from './Skelletons/CamperGallerySkelleton/GalleryImageSkelleton';
