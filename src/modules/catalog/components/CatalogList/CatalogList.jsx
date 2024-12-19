@@ -8,13 +8,19 @@ const CatalogList = ({ children }) => {
 
   return (
     <section className={s.catalogListSection}>
-      <ul className={s.catalogList}>
-        {campers.map((camper) => (
-          <li key={camper.id}>
-            <CatalogItem camper={camper} />
-          </li>
-        ))}
-      </ul>
+      {campers?.length > 0 ? (
+        <ul className={s.catalogList}>
+          {campers.map((camper) => (
+            <li key={camper.id}>
+              <CatalogItem camper={camper} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div>
+          <p>No results</p>
+        </div>
+      )}
       {children}
     </section>
   );
