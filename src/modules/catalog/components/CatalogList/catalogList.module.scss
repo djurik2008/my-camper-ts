@@ -25,3 +25,36 @@
     width: calc($desktop * 0.6166);
   }
 }
+
+.emptyListContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10%;
+
+  @include media(desktop-s) {
+    margin-top: 25%;
+  }
+}
+
+.emptyListIcon {
+  width: 50px;
+  height: 50px;
+  fill: $gray-color;
+}
+
+.explainText {
+  @include font(16, 24);
+  color: $text-color;
+
+  @include media(tablet) {
+    width: 70%;
+  }
+
+  @include media(desktop-s) {
+    width: 50%;
+  }
+}

@@ -95,12 +95,7 @@
   }
 }
 
-.formBtnsWrapper .responsiveSubBtn {
-  @include media(to-tablet) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+.responsiveSubBtn {
   @include media(desktop-s) {
     width: 150px;
     height: 50px;
@@ -115,8 +110,17 @@
 }
 
 .formBtnsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include media(tablet) {
+    flex-direction: row;
+    gap: 30px;
+  }
+
   @include media(desktop-s) {
-    display: flex;
     justify-content: space-between;
   }
 }

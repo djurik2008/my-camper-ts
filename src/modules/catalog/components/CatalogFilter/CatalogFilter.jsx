@@ -37,7 +37,7 @@ const CatalogFilter = ({
     const isFilterChanged = !isEqual(filter, initialFilter);
 
     if (!isFilterChanged) {
-      reset(filter);
+      reset(initialFilter);
     } else {
       dispatch(clearFilter());
       dispatch(clearCampers());

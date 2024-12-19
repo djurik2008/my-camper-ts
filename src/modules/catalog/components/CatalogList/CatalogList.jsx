@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectCampersItems } from '@redux/campers/campersSelectors';
 import { CatalogItem } from 'modules/catalog';
+import { sprite } from 'shared/svg';
 import s from './catalogList.module.scss';
 
 const CatalogList = ({ children }) => {
@@ -17,8 +18,14 @@ const CatalogList = ({ children }) => {
           ))}
         </ul>
       ) : (
-        <div>
-          <p>No results</p>
+        <div className={s.emptyListContainer}>
+          <svg className={s.emptyListIcon}>
+            <use href={sprite + '#no-results'}></use>
+          </svg>
+          <p className={s.explainText}>
+            Oops, no campers available! Try changing the filter selection, or
+            the application might not be working properly.
+          </p>
         </div>
       )}
       {children}
