@@ -1,4 +1,4 @@
-import { Puff, ThreeDots } from 'react-loader-spinner';
+import { Puff, ThreeDots, Bars } from 'react-loader-spinner';
 import { useThreeDotsLoaderProps } from 'hooks/useThreeDotsProps';
 import s from './loader.module.scss';
 
@@ -16,6 +16,16 @@ const Loader = ({ type }) => {
     />
   ) : type === 'button' ? (
     <ThreeDots {...threeDotsProps} />
+  ) : type === 'content' ? (
+    <Bars
+      height="30"
+      width="30"
+      color="#E44848"
+      ariaLabel="bars-loading"
+      wrapperStyle={{}}
+      wrapperClass={s.contentLoader}
+      visible={true}
+    />
   ) : null;
 };
 
