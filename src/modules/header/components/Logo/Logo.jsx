@@ -7,7 +7,7 @@ const Logo = ({ className }) => {
   return (
     <Link to={ROUTES.HOME} className={className && className}>
       <svg className={s.logo}>
-        <use href={`${sprite}#TravelTrucks`}></use>
+        <use href={`${sprite}#icon-logo`}></use>
       </svg>
     </Link>
   );

@@ -38,12 +38,11 @@ body {
 
   @include media(desktop-s) {
     --header-padding: 22px;
-    --header-content-height: 19px;
+    --header-content-height: 16px;
   }
 
   @include media(desktop) {
     --header-padding: 26px;
-    --header-content-height: 20px;
   }
 }
 
