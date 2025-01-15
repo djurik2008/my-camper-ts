@@ -1,5 +1,4 @@
-import { SpeedInsights } from '@vercel/speed-insights/react';
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -12,17 +11,16 @@ import '../node_modules/modern-normalize/modern-normalize.css';
 import 'shared/styles/_base.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <NprogressProvider>
-            <ProgressBar />
-            <SpeedInsights />
-            <App />
-          </NprogressProvider>
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter>
+        <NprogressProvider>
+          <ProgressBar />
+          <App />
+        </NprogressProvider>
+      </BrowserRouter>
+    </PersistGate>
+  </Provider>
+  // </React.StrictMode>
 );
