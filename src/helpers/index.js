@@ -1,2 +1,2 @@
 export { extractKeysAndValues } from './extractKeysAndValues';
-export { handleImageError } from './handleImageError';
+export { handleImageError } from './handleImageError.ts';

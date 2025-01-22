@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { ClassNameProp } from 'shared/types';
@@ -9,11 +8,7 @@ interface LinkButtonProps extends ClassNameProp {
   linkTo: string;
 }
 
-const LinkButton: FC<LinkButtonProps> = ({
-  text,
-  linkTo,
-  className = null,
-}) => {
+const LinkButton = ({ text, linkTo, className }: LinkButtonProps) => {
   return (
     <Link to={linkTo} className={clsx(s.linkButton, className)}>
       {text}

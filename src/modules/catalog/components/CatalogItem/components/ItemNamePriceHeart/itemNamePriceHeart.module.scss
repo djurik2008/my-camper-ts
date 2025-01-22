@@ -8,21 +8,20 @@
   @include font(18, 26);
   font-weight: 500;
 
-  @include media(to-tablet) {
-    max-width: 55%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include media(tablet) {
+    max-width: 250px;
   }
 
   @include media(desktop) {
     @include font(24, 32);
     font-weight: 600;
 
-    max-width: 65%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    max-width: 300px;
   }
 }
 
