@@ -6,7 +6,7 @@ export const ROUTES = {
   NOT_FOUND: '/not-found',
 };
 
-export const MAIN_CAMP_ADVANTAGES = [
+export const MAIN_CAMP_ADVANTAGES: string[] = [
   'transmission',
   'engine',
   'AC',
@@ -14,7 +14,7 @@ export const MAIN_CAMP_ADVANTAGES = [
   'kitchen',
 ];
 
-export const CAMP_ADVANTAGES = [
+export const CAMP_ADVANTAGES: string[] = [
   'transmission',
   'engine',
   'AC',
@@ -28,7 +28,7 @@ export const CAMP_ADVANTAGES = [
   'water',
 ];
 
-export const VEHICLE_DETAILS = [
+export const VEHICLE_DETAILS: string[] = [
   'form',
   'length',
   'width',
