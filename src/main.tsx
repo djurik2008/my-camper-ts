@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import App from './App.jsx';
-import NprogressProvider from 'context/NprogressProvider.js';
+import { NprogressProvider } from 'context';
 import { ProgressBar } from 'shared/components/';
-import { persistor, store } from '@redux/store.js';
+import { persistor, store } from '@redux/store';
 import '../node_modules/modern-normalize/modern-normalize.css';
 import 'shared/styles/_base.scss';
 
